@@ -3,7 +3,6 @@
 import { APIResource } from '../../../../resource';
 import { isRequestOptions } from '../../../../core';
 import * as Core from '../../../../core';
-import * as RazorpayAPI from './razorpay';
 
 export class Razorpay extends APIResource {
   /**
@@ -156,9 +155,11 @@ export interface RazorpayVerifyPaymentParams {
   razorpay_signature?: string;
 }
 
-export namespace Razorpay {
-  export import RazorpayCreateResponse = RazorpayAPI.RazorpayCreateResponse;
-  export import RazorpayVerifyPaymentResponse = RazorpayAPI.RazorpayVerifyPaymentResponse;
-  export import RazorpayCreateParams = RazorpayAPI.RazorpayCreateParams;
-  export import RazorpayVerifyPaymentParams = RazorpayAPI.RazorpayVerifyPaymentParams;
+export declare namespace Razorpay {
+  export {
+    type RazorpayCreateResponse as RazorpayCreateResponse,
+    type RazorpayVerifyPaymentResponse as RazorpayVerifyPaymentResponse,
+    type RazorpayCreateParams as RazorpayCreateParams,
+    type RazorpayVerifyPaymentParams as RazorpayVerifyPaymentParams,
+  };
 }

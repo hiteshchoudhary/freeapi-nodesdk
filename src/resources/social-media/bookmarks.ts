@@ -3,7 +3,6 @@
 import { APIResource } from '../../resource';
 import { isRequestOptions } from '../../core';
 import * as Core from '../../core';
-import * as BookmarksAPI from './bookmarks';
 
 export class Bookmarks extends APIResource {
   /**
@@ -193,8 +192,10 @@ export interface BookmarkRetrieveParams {
   page?: string;
 }
 
-export namespace Bookmarks {
-  export import BookmarkCreateResponse = BookmarksAPI.BookmarkCreateResponse;
-  export import BookmarkRetrieveResponse = BookmarksAPI.BookmarkRetrieveResponse;
-  export import BookmarkRetrieveParams = BookmarksAPI.BookmarkRetrieveParams;
+export declare namespace Bookmarks {
+  export {
+    type BookmarkCreateResponse as BookmarkCreateResponse,
+    type BookmarkRetrieveResponse as BookmarkRetrieveResponse,
+    type BookmarkRetrieveParams as BookmarkRetrieveParams,
+  };
 }

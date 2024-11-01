@@ -3,8 +3,8 @@
 import { APIResource } from '../../../resource';
 import { isRequestOptions } from '../../../core';
 import * as Core from '../../../core';
-import * as DogsAPI from './dogs';
 import * as DogAPI from './dog';
+import { Dog, DogRandomResponse } from './dog';
 
 export class Dogs extends APIResource {
   dog: DogAPI.Dog = new DogAPI.Dog(this._client);
@@ -189,10 +189,14 @@ export interface DogListParams {
   query?: string;
 }
 
-export namespace Dogs {
-  export import DogRetrieveResponse = DogsAPI.DogRetrieveResponse;
-  export import DogListResponse = DogsAPI.DogListResponse;
-  export import DogListParams = DogsAPI.DogListParams;
-  export import Dog = DogAPI.Dog;
-  export import DogRandomResponse = DogAPI.DogRandomResponse;
+Dogs.Dog = Dog;
+
+export declare namespace Dogs {
+  export {
+    type DogRetrieveResponse as DogRetrieveResponse,
+    type DogListResponse as DogListResponse,
+    type DogListParams as DogListParams,
+  };
+
+  export { Dog as Dog, type DogRandomResponse as DogRandomResponse };
 }

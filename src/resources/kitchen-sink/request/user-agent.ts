@@ -2,7 +2,6 @@
 
 import { APIResource } from '../../../resource';
 import * as Core from '../../../core';
-import * as UserAgentAPI from './user-agent';
 
 export class UserAgent extends APIResource {
   /**
@@ -33,6 +32,6 @@ export namespace UserAgentRetrieveResponse {
   }
 }
 
-export namespace UserAgent {
-  export import UserAgentRetrieveResponse = UserAgentAPI.UserAgentRetrieveResponse;
+export declare namespace UserAgent {
+  export { type UserAgentRetrieveResponse as UserAgentRetrieveResponse };
 }

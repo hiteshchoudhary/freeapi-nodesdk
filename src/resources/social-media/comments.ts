@@ -3,7 +3,6 @@
 import { APIResource } from '../../resource';
 import { isRequestOptions } from '../../core';
 import * as Core from '../../core';
-import * as CommentsAPI from './comments';
 
 export class Comments extends APIResource {
   /**
@@ -316,13 +315,15 @@ export interface CommentListParams {
   page?: string;
 }
 
-export namespace Comments {
-  export import CommentCreateResponse = CommentsAPI.CommentCreateResponse;
-  export import CommentUpdateResponse = CommentsAPI.CommentUpdateResponse;
-  export import CommentListResponse = CommentsAPI.CommentListResponse;
-  export import CommentDeleteResponse = CommentsAPI.CommentDeleteResponse;
-  export import CommentLikeResponse = CommentsAPI.CommentLikeResponse;
-  export import CommentCreateParams = CommentsAPI.CommentCreateParams;
-  export import CommentUpdateParams = CommentsAPI.CommentUpdateParams;
-  export import CommentListParams = CommentsAPI.CommentListParams;
+export declare namespace Comments {
+  export {
+    type CommentCreateResponse as CommentCreateResponse,
+    type CommentUpdateResponse as CommentUpdateResponse,
+    type CommentListResponse as CommentListResponse,
+    type CommentDeleteResponse as CommentDeleteResponse,
+    type CommentLikeResponse as CommentLikeResponse,
+    type CommentCreateParams as CommentCreateParams,
+    type CommentUpdateParams as CommentUpdateParams,
+    type CommentListParams as CommentListParams,
+  };
 }

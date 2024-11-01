@@ -3,7 +3,6 @@
 import { APIResource } from '../resource';
 import { isRequestOptions } from '../core';
 import * as Core from '../core';
-import * as TodosAPI from './todos';
 
 export class Todos extends APIResource {
   /**
@@ -294,14 +293,16 @@ export interface TodoListParams {
   query?: string;
 }
 
-export namespace Todos {
-  export import TodoCreateResponse = TodosAPI.TodoCreateResponse;
-  export import TodoRetrieveResponse = TodosAPI.TodoRetrieveResponse;
-  export import TodoUpdateResponse = TodosAPI.TodoUpdateResponse;
-  export import TodoListResponse = TodosAPI.TodoListResponse;
-  export import TodoDeleteResponse = TodosAPI.TodoDeleteResponse;
-  export import TodoToggleStatusResponse = TodosAPI.TodoToggleStatusResponse;
-  export import TodoCreateParams = TodosAPI.TodoCreateParams;
-  export import TodoUpdateParams = TodosAPI.TodoUpdateParams;
-  export import TodoListParams = TodosAPI.TodoListParams;
+export declare namespace Todos {
+  export {
+    type TodoCreateResponse as TodoCreateResponse,
+    type TodoRetrieveResponse as TodoRetrieveResponse,
+    type TodoUpdateResponse as TodoUpdateResponse,
+    type TodoListResponse as TodoListResponse,
+    type TodoDeleteResponse as TodoDeleteResponse,
+    type TodoToggleStatusResponse as TodoToggleStatusResponse,
+    type TodoCreateParams as TodoCreateParams,
+    type TodoUpdateParams as TodoUpdateParams,
+    type TodoListParams as TodoListParams,
+  };
 }

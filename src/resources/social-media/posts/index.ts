@@ -1,18 +1,18 @@
 // File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
-export { ImageRemoveResponse, Images } from './images';
-export { MyListResponse, MyListParams, My } from './my';
+export { Images, type ImageRemoveResponse } from './images';
+export { My, type MyListResponse, type MyListParams } from './my';
 export {
-  PostCreateResponse,
-  PostRetrieveResponse,
-  PostUpdateResponse,
-  PostListResponse,
-  PostDeleteResponse,
-  PostLikeResponse,
-  PostCreateParams,
-  PostUpdateParams,
-  PostListParams,
   Posts,
+  type PostCreateResponse,
+  type PostRetrieveResponse,
+  type PostUpdateResponse,
+  type PostListResponse,
+  type PostDeleteResponse,
+  type PostLikeResponse,
+  type PostCreateParams,
+  type PostUpdateParams,
+  type PostListParams,
 } from './posts';
-export { TagListResponse, TagListParams, Tag } from './tag';
-export { UserPostListResponse, UserPostListParams, UserPosts } from './user-posts';
+export { Tag, type TagListResponse, type TagListParams } from './tag';
+export { UserPosts, type UserPostListResponse, type UserPostListParams } from './user-posts';
