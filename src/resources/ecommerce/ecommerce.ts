@@ -2,11 +2,56 @@
 
 import { APIResource } from '../../resource';
 import * as AddressesAPI from './addresses';
+import {
+  AddressCreateParams,
+  AddressCreateResponse,
+  AddressDeleteResponse,
+  AddressListParams,
+  AddressListResponse,
+  AddressRetrieveResponse,
+  AddressUpdateParams,
+  AddressUpdateResponse,
+  Addresses,
+} from './addresses';
 import * as CartAPI from './cart';
+import { Cart, CartClearResponse } from './cart';
 import * as CategoriesAPI from './categories';
+import {
+  Categories,
+  CategoryCreateParams,
+  CategoryCreateResponse,
+  CategoryDeleteResponse,
+  CategoryListParams,
+  CategoryListResponse,
+  CategoryRetrieveResponse,
+  CategoryUpdateParams,
+  CategoryUpdateResponse,
+} from './categories';
 import * as CouponsAPI from './coupons/coupons';
+import {
+  CouponApplyParams,
+  CouponApplyResponse,
+  CouponCreateParams,
+  CouponCreateResponse,
+  CouponDeleteResponse,
+  CouponListParams,
+  CouponListResponse,
+  CouponRemoveParams,
+  CouponRemoveResponse,
+  CouponRetrieveResponse,
+  CouponUpdateParams,
+  CouponUpdateResponse,
+  Coupons,
+} from './coupons/coupons';
 import * as OrdersAPI from './orders/orders';
+import { OrderRetrieveResponse, Orders } from './orders/orders';
 import * as ProfileAPI from './profile/profile';
+import {
+  Profile,
+  ProfileRetrieveResponse,
+  ProfileUpdateParams,
+  ProfileUpdateResponse,
+} from './profile/profile';
 
 export class Ecommerce extends APIResource {
   profile: ProfileAPI.Profile = new ProfileAPI.Profile(this._client);
@@ -17,44 +62,62 @@ export class Ecommerce extends APIResource {
   orders: OrdersAPI.Orders = new OrdersAPI.Orders(this._client);
 }
 
-export namespace Ecommerce {
-  export import Profile = ProfileAPI.Profile;
-  export import ProfileRetrieveResponse = ProfileAPI.ProfileRetrieveResponse;
-  export import ProfileUpdateResponse = ProfileAPI.ProfileUpdateResponse;
-  export import ProfileUpdateParams = ProfileAPI.ProfileUpdateParams;
-  export import Cart = CartAPI.Cart;
-  export import CartClearResponse = CartAPI.CartClearResponse;
-  export import Categories = CategoriesAPI.Categories;
-  export import CategoryCreateResponse = CategoriesAPI.CategoryCreateResponse;
-  export import CategoryRetrieveResponse = CategoriesAPI.CategoryRetrieveResponse;
-  export import CategoryUpdateResponse = CategoriesAPI.CategoryUpdateResponse;
-  export import CategoryListResponse = CategoriesAPI.CategoryListResponse;
-  export import CategoryDeleteResponse = CategoriesAPI.CategoryDeleteResponse;
-  export import CategoryCreateParams = CategoriesAPI.CategoryCreateParams;
-  export import CategoryUpdateParams = CategoriesAPI.CategoryUpdateParams;
-  export import CategoryListParams = CategoriesAPI.CategoryListParams;
-  export import Coupons = CouponsAPI.Coupons;
-  export import CouponCreateResponse = CouponsAPI.CouponCreateResponse;
-  export import CouponRetrieveResponse = CouponsAPI.CouponRetrieveResponse;
-  export import CouponUpdateResponse = CouponsAPI.CouponUpdateResponse;
-  export import CouponListResponse = CouponsAPI.CouponListResponse;
-  export import CouponDeleteResponse = CouponsAPI.CouponDeleteResponse;
-  export import CouponApplyResponse = CouponsAPI.CouponApplyResponse;
-  export import CouponRemoveResponse = CouponsAPI.CouponRemoveResponse;
-  export import CouponCreateParams = CouponsAPI.CouponCreateParams;
-  export import CouponUpdateParams = CouponsAPI.CouponUpdateParams;
-  export import CouponListParams = CouponsAPI.CouponListParams;
-  export import CouponApplyParams = CouponsAPI.CouponApplyParams;
-  export import CouponRemoveParams = CouponsAPI.CouponRemoveParams;
-  export import Addresses = AddressesAPI.Addresses;
-  export import AddressCreateResponse = AddressesAPI.AddressCreateResponse;
-  export import AddressRetrieveResponse = AddressesAPI.AddressRetrieveResponse;
-  export import AddressUpdateResponse = AddressesAPI.AddressUpdateResponse;
-  export import AddressListResponse = AddressesAPI.AddressListResponse;
-  export import AddressDeleteResponse = AddressesAPI.AddressDeleteResponse;
-  export import AddressCreateParams = AddressesAPI.AddressCreateParams;
-  export import AddressUpdateParams = AddressesAPI.AddressUpdateParams;
-  export import AddressListParams = AddressesAPI.AddressListParams;
-  export import Orders = OrdersAPI.Orders;
-  export import OrderRetrieveResponse = OrdersAPI.OrderRetrieveResponse;
+Ecommerce.Profile = Profile;
+Ecommerce.Cart = Cart;
+Ecommerce.Categories = Categories;
+Ecommerce.Coupons = Coupons;
+Ecommerce.Addresses = Addresses;
+Ecommerce.Orders = Orders;
+
+export declare namespace Ecommerce {
+  export {
+    Profile as Profile,
+    type ProfileRetrieveResponse as ProfileRetrieveResponse,
+    type ProfileUpdateResponse as ProfileUpdateResponse,
+    type ProfileUpdateParams as ProfileUpdateParams,
+  };
+
+  export { Cart as Cart, type CartClearResponse as CartClearResponse };
+
+  export {
+    Categories as Categories,
+    type CategoryCreateResponse as CategoryCreateResponse,
+    type CategoryRetrieveResponse as CategoryRetrieveResponse,
+    type CategoryUpdateResponse as CategoryUpdateResponse,
+    type CategoryListResponse as CategoryListResponse,
+    type CategoryDeleteResponse as CategoryDeleteResponse,
+    type CategoryCreateParams as CategoryCreateParams,
+    type CategoryUpdateParams as CategoryUpdateParams,
+    type CategoryListParams as CategoryListParams,
+  };
+
+  export {
+    Coupons as Coupons,
+    type CouponCreateResponse as CouponCreateResponse,
+    type CouponRetrieveResponse as CouponRetrieveResponse,
+    type CouponUpdateResponse as CouponUpdateResponse,
+    type CouponListResponse as CouponListResponse,
+    type CouponDeleteResponse as CouponDeleteResponse,
+    type CouponApplyResponse as CouponApplyResponse,
+    type CouponRemoveResponse as CouponRemoveResponse,
+    type CouponCreateParams as CouponCreateParams,
+    type CouponUpdateParams as CouponUpdateParams,
+    type CouponListParams as CouponListParams,
+    type CouponApplyParams as CouponApplyParams,
+    type CouponRemoveParams as CouponRemoveParams,
+  };
+
+  export {
+    Addresses as Addresses,
+    type AddressCreateResponse as AddressCreateResponse,
+    type AddressRetrieveResponse as AddressRetrieveResponse,
+    type AddressUpdateResponse as AddressUpdateResponse,
+    type AddressListResponse as AddressListResponse,
+    type AddressDeleteResponse as AddressDeleteResponse,
+    type AddressCreateParams as AddressCreateParams,
+    type AddressUpdateParams as AddressUpdateParams,
+    type AddressListParams as AddressListParams,
+  };
+
+  export { Orders as Orders, type OrderRetrieveResponse as OrderRetrieveResponse };
 }

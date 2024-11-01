@@ -2,7 +2,6 @@
 
 import { APIResource } from '../resource';
 import * as Core from '../core';
-import * as HealthcheckAPI from './healthcheck';
 
 export class Healthcheck extends APIResource {
   /**
@@ -27,6 +26,6 @@ export interface HealthcheckRetrieveResponse {
   success?: boolean;
 }
 
-export namespace Healthcheck {
-  export import HealthcheckRetrieveResponse = HealthcheckAPI.HealthcheckRetrieveResponse;
+export declare namespace Healthcheck {
+  export { type HealthcheckRetrieveResponse as HealthcheckRetrieveResponse };
 }

@@ -2,9 +2,13 @@
 
 import { APIResource } from '../../../resource';
 import * as CacheAPI from './cache';
+import { Cache, CacheRetrieveResponse } from './cache';
 import * as HeadersAPI from './headers';
+import { HeaderRetrieveResponse, Headers } from './headers';
 import * as HTMLAPI from './html';
+import { HTML } from './html';
 import * as XmlAPI from './xml';
+import { Xml } from './xml';
 
 export class Response extends APIResource {
   headers: HeadersAPI.Headers = new HeadersAPI.Headers(this._client);
@@ -13,11 +17,17 @@ export class Response extends APIResource {
   xml: XmlAPI.Xml = new XmlAPI.Xml(this._client);
 }
 
-export namespace Response {
-  export import Headers = HeadersAPI.Headers;
-  export import HeaderRetrieveResponse = HeadersAPI.HeaderRetrieveResponse;
-  export import Cache = CacheAPI.Cache;
-  export import CacheRetrieveResponse = CacheAPI.CacheRetrieveResponse;
-  export import HTML = HTMLAPI.HTML;
-  export import Xml = XmlAPI.Xml;
+Response.Headers = Headers;
+Response.Cache = Cache;
+Response.HTML = HTML;
+Response.Xml = Xml;
+
+export declare namespace Response {
+  export { Headers as Headers, type HeaderRetrieveResponse as HeaderRetrieveResponse };
+
+  export { Cache as Cache, type CacheRetrieveResponse as CacheRetrieveResponse };
+
+  export { HTML as HTML };
+
+  export { Xml as Xml };
 }

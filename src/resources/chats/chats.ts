@@ -2,8 +2,19 @@
 
 import { APIResource } from '../../resource';
 import * as Core from '../../core';
-import * as ChatsAPI from './chats';
 import * as GroupAPI from './group';
+import {
+  Group,
+  GroupCreateParams,
+  GroupCreateResponse,
+  GroupDeleteResponse,
+  GroupLeaveResponse,
+  GroupParticipantAddResponse,
+  GroupParticipantRemoveResponse,
+  GroupRetrieveResponse,
+  GroupUpdateParams,
+  GroupUpdateResponse,
+} from './group';
 
 export class Chats extends APIResource {
   group: GroupAPI.Group = new GroupAPI.Group(this._client);
@@ -32,16 +43,21 @@ export interface ChatRemoveResponse {
   success?: boolean;
 }
 
-export namespace Chats {
-  export import ChatRemoveResponse = ChatsAPI.ChatRemoveResponse;
-  export import Group = GroupAPI.Group;
-  export import GroupCreateResponse = GroupAPI.GroupCreateResponse;
-  export import GroupRetrieveResponse = GroupAPI.GroupRetrieveResponse;
-  export import GroupUpdateResponse = GroupAPI.GroupUpdateResponse;
-  export import GroupDeleteResponse = GroupAPI.GroupDeleteResponse;
-  export import GroupLeaveResponse = GroupAPI.GroupLeaveResponse;
-  export import GroupParticipantAddResponse = GroupAPI.GroupParticipantAddResponse;
-  export import GroupParticipantRemoveResponse = GroupAPI.GroupParticipantRemoveResponse;
-  export import GroupCreateParams = GroupAPI.GroupCreateParams;
-  export import GroupUpdateParams = GroupAPI.GroupUpdateParams;
+Chats.Group = Group;
+
+export declare namespace Chats {
+  export { type ChatRemoveResponse as ChatRemoveResponse };
+
+  export {
+    Group as Group,
+    type GroupCreateResponse as GroupCreateResponse,
+    type GroupRetrieveResponse as GroupRetrieveResponse,
+    type GroupUpdateResponse as GroupUpdateResponse,
+    type GroupDeleteResponse as GroupDeleteResponse,
+    type GroupLeaveResponse as GroupLeaveResponse,
+    type GroupParticipantAddResponse as GroupParticipantAddResponse,
+    type GroupParticipantRemoveResponse as GroupParticipantRemoveResponse,
+    type GroupCreateParams as GroupCreateParams,
+    type GroupUpdateParams as GroupUpdateParams,
+  };
 }

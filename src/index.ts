@@ -1,10 +1,73 @@
 // File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
-import * as Errors from './error';
-import * as Uploads from './uploads';
 import { type Agent } from './_shims/index';
 import * as Core from './core';
+import * as Errors from './error';
+import * as Uploads from './uploads';
 import * as API from './resources/index';
+import {
+  AuthenticationCurrentUserResponse,
+  AuthenticationLoginParams,
+  AuthenticationLoginResponse,
+  AuthenticationLogoutResponse,
+  AuthenticationRegisterParams,
+  AuthenticationRegisterResponse,
+  AuthenticationVerifyEmailResponse,
+  Authentications,
+} from './resources/authentications';
+import { Healthcheck, HealthcheckRetrieveResponse } from './resources/healthcheck';
+import { MessageListResponse, MessageSendParams, MessageSendResponse, Messages } from './resources/messages';
+import { ResetDB, ResetDBDeleteResponse } from './resources/reset-db';
+import {
+  TodoCreateParams,
+  TodoCreateResponse,
+  TodoDeleteResponse,
+  TodoListParams,
+  TodoListResponse,
+  TodoRetrieveResponse,
+  TodoToggleStatusResponse,
+  TodoUpdateParams,
+  TodoUpdateResponse,
+  Todos,
+} from './resources/todos';
+import { Cart, CartRetrieveResponse } from './resources/cart/cart';
+import { ChatApp } from './resources/chat-app/chat-app';
+import { ChatRemoveResponse, Chats } from './resources/chats/chats';
+import { Ecommerce } from './resources/ecommerce/ecommerce';
+import { KitchenSink } from './resources/kitchen-sink/kitchen-sink';
+import {
+  KitchenSinkRedirectToParams,
+  KitchenSinkResponseBrotliResponse,
+  KitchenSinkResponseGzipResponse,
+  KitchenSinks,
+} from './resources/kitchen-sinks/kitchen-sinks';
+import {
+  ProductCreateParams,
+  ProductCreateResponse,
+  ProductDeleteResponse,
+  ProductListParams,
+  ProductListResponse,
+  ProductRetrieveResponse,
+  ProductUpdateParams,
+  ProductUpdateResponse,
+  Products,
+} from './resources/products/products';
+import { Public } from './resources/public/public';
+import { Seed } from './resources/seed/seed';
+import { SocialMedia } from './resources/social-media/social-media';
+import {
+  UserAssignRoleParams,
+  UserAssignRoleResponse,
+  UserChangePasswordParams,
+  UserChangePasswordResponse,
+  UserForgotPasswordParams,
+  UserForgotPasswordResponse,
+  UserRefreshTokenResponse,
+  UserResendEmailVerificationResponse,
+  UserResetPasswordParams,
+  UserResetPasswordResponse,
+  Users,
+} from './resources/users/users';
 
 export interface ClientOptions {
   /**
@@ -147,103 +210,126 @@ export class Freeapiapp extends Core.APIClient {
   static fileFromPath = Uploads.fileFromPath;
 }
 
-export const {
-  FreeapiappError,
-  APIError,
-  APIConnectionError,
-  APIConnectionTimeoutError,
-  APIUserAbortError,
-  NotFoundError,
-  ConflictError,
-  RateLimitError,
-  BadRequestError,
-  AuthenticationError,
-  InternalServerError,
-  PermissionDeniedError,
-  UnprocessableEntityError,
-} = Errors;
+export const FreeapiappError = Errors.FreeapiappError;
+export const APIError = Errors.APIError;
+export const APIConnectionError = Errors.APIConnectionError;
+export const APIConnectionTimeoutError = Errors.APIConnectionTimeoutError;
+export const APIUserAbortError = Errors.APIUserAbortError;
+export const NotFoundError = Errors.NotFoundError;
+export const ConflictError = Errors.ConflictError;
+export const RateLimitError = Errors.RateLimitError;
+export const BadRequestError = Errors.BadRequestError;
+export const AuthenticationError = Errors.AuthenticationError;
+export const InternalServerError = Errors.InternalServerError;
+export const PermissionDeniedError = Errors.PermissionDeniedError;
+export const UnprocessableEntityError = Errors.UnprocessableEntityError;
 
 export import toFile = Uploads.toFile;
 export import fileFromPath = Uploads.fileFromPath;
 
-export namespace Freeapiapp {
-  export import RequestOptions = Core.RequestOptions;
+Freeapiapp.Public = Public;
+Freeapiapp.KitchenSink = KitchenSink;
+Freeapiapp.KitchenSinks = KitchenSinks;
+Freeapiapp.Authentications = Authentications;
+Freeapiapp.Users = Users;
+Freeapiapp.Ecommerce = Ecommerce;
+Freeapiapp.Products = Products;
+Freeapiapp.Cart = Cart;
+Freeapiapp.Todos = Todos;
+Freeapiapp.SocialMedia = SocialMedia;
+Freeapiapp.ChatApp = ChatApp;
+Freeapiapp.Chats = Chats;
+Freeapiapp.Messages = Messages;
+Freeapiapp.Seed = Seed;
+Freeapiapp.ResetDB = ResetDB;
+Freeapiapp.Healthcheck = Healthcheck;
 
-  export import Public = API.Public;
+export declare namespace Freeapiapp {
+  export type RequestOptions = Core.RequestOptions;
 
-  export import KitchenSink = API.KitchenSink;
+  export { Public as Public };
 
-  export import KitchenSinks = API.KitchenSinks;
-  export import KitchenSinkResponseBrotliResponse = API.KitchenSinkResponseBrotliResponse;
-  export import KitchenSinkResponseGzipResponse = API.KitchenSinkResponseGzipResponse;
-  export import KitchenSinkRedirectToParams = API.KitchenSinkRedirectToParams;
+  export { KitchenSink as KitchenSink };
 
-  export import Authentications = API.Authentications;
-  export import AuthenticationCurrentUserResponse = API.AuthenticationCurrentUserResponse;
-  export import AuthenticationLoginResponse = API.AuthenticationLoginResponse;
-  export import AuthenticationLogoutResponse = API.AuthenticationLogoutResponse;
-  export import AuthenticationRegisterResponse = API.AuthenticationRegisterResponse;
-  export import AuthenticationVerifyEmailResponse = API.AuthenticationVerifyEmailResponse;
-  export import AuthenticationLoginParams = API.AuthenticationLoginParams;
-  export import AuthenticationRegisterParams = API.AuthenticationRegisterParams;
+  export {
+    KitchenSinks as KitchenSinks,
+    type KitchenSinkResponseBrotliResponse as KitchenSinkResponseBrotliResponse,
+    type KitchenSinkResponseGzipResponse as KitchenSinkResponseGzipResponse,
+    type KitchenSinkRedirectToParams as KitchenSinkRedirectToParams,
+  };
 
-  export import Users = API.Users;
-  export import UserAssignRoleResponse = API.UserAssignRoleResponse;
-  export import UserChangePasswordResponse = API.UserChangePasswordResponse;
-  export import UserForgotPasswordResponse = API.UserForgotPasswordResponse;
-  export import UserRefreshTokenResponse = API.UserRefreshTokenResponse;
-  export import UserResendEmailVerificationResponse = API.UserResendEmailVerificationResponse;
-  export import UserResetPasswordResponse = API.UserResetPasswordResponse;
-  export import UserAssignRoleParams = API.UserAssignRoleParams;
-  export import UserChangePasswordParams = API.UserChangePasswordParams;
-  export import UserForgotPasswordParams = API.UserForgotPasswordParams;
-  export import UserResetPasswordParams = API.UserResetPasswordParams;
+  export {
+    Authentications as Authentications,
+    type AuthenticationCurrentUserResponse as AuthenticationCurrentUserResponse,
+    type AuthenticationLoginResponse as AuthenticationLoginResponse,
+    type AuthenticationLogoutResponse as AuthenticationLogoutResponse,
+    type AuthenticationRegisterResponse as AuthenticationRegisterResponse,
+    type AuthenticationVerifyEmailResponse as AuthenticationVerifyEmailResponse,
+    type AuthenticationLoginParams as AuthenticationLoginParams,
+    type AuthenticationRegisterParams as AuthenticationRegisterParams,
+  };
 
-  export import Ecommerce = API.Ecommerce;
+  export {
+    Users as Users,
+    type UserAssignRoleResponse as UserAssignRoleResponse,
+    type UserChangePasswordResponse as UserChangePasswordResponse,
+    type UserForgotPasswordResponse as UserForgotPasswordResponse,
+    type UserRefreshTokenResponse as UserRefreshTokenResponse,
+    type UserResendEmailVerificationResponse as UserResendEmailVerificationResponse,
+    type UserResetPasswordResponse as UserResetPasswordResponse,
+    type UserAssignRoleParams as UserAssignRoleParams,
+    type UserChangePasswordParams as UserChangePasswordParams,
+    type UserForgotPasswordParams as UserForgotPasswordParams,
+    type UserResetPasswordParams as UserResetPasswordParams,
+  };
 
-  export import Products = API.Products;
-  export import ProductCreateResponse = API.ProductCreateResponse;
-  export import ProductRetrieveResponse = API.ProductRetrieveResponse;
-  export import ProductUpdateResponse = API.ProductUpdateResponse;
-  export import ProductListResponse = API.ProductListResponse;
-  export import ProductDeleteResponse = API.ProductDeleteResponse;
-  export import ProductCreateParams = API.ProductCreateParams;
-  export import ProductUpdateParams = API.ProductUpdateParams;
-  export import ProductListParams = API.ProductListParams;
+  export { Ecommerce as Ecommerce };
 
-  export import Cart = API.Cart;
-  export import CartRetrieveResponse = API.CartRetrieveResponse;
+  export {
+    Products as Products,
+    type ProductCreateResponse as ProductCreateResponse,
+    type ProductRetrieveResponse as ProductRetrieveResponse,
+    type ProductUpdateResponse as ProductUpdateResponse,
+    type ProductListResponse as ProductListResponse,
+    type ProductDeleteResponse as ProductDeleteResponse,
+    type ProductCreateParams as ProductCreateParams,
+    type ProductUpdateParams as ProductUpdateParams,
+    type ProductListParams as ProductListParams,
+  };
 
-  export import Todos = API.Todos;
-  export import TodoCreateResponse = API.TodoCreateResponse;
-  export import TodoRetrieveResponse = API.TodoRetrieveResponse;
-  export import TodoUpdateResponse = API.TodoUpdateResponse;
-  export import TodoListResponse = API.TodoListResponse;
-  export import TodoDeleteResponse = API.TodoDeleteResponse;
-  export import TodoToggleStatusResponse = API.TodoToggleStatusResponse;
-  export import TodoCreateParams = API.TodoCreateParams;
-  export import TodoUpdateParams = API.TodoUpdateParams;
-  export import TodoListParams = API.TodoListParams;
+  export { Cart as Cart, type CartRetrieveResponse as CartRetrieveResponse };
 
-  export import SocialMedia = API.SocialMedia;
+  export {
+    Todos as Todos,
+    type TodoCreateResponse as TodoCreateResponse,
+    type TodoRetrieveResponse as TodoRetrieveResponse,
+    type TodoUpdateResponse as TodoUpdateResponse,
+    type TodoListResponse as TodoListResponse,
+    type TodoDeleteResponse as TodoDeleteResponse,
+    type TodoToggleStatusResponse as TodoToggleStatusResponse,
+    type TodoCreateParams as TodoCreateParams,
+    type TodoUpdateParams as TodoUpdateParams,
+    type TodoListParams as TodoListParams,
+  };
 
-  export import ChatApp = API.ChatApp;
+  export { SocialMedia as SocialMedia };
 
-  export import Chats = API.Chats;
-  export import ChatRemoveResponse = API.ChatRemoveResponse;
+  export { ChatApp as ChatApp };
 
-  export import Messages = API.Messages;
-  export import MessageListResponse = API.MessageListResponse;
-  export import MessageSendResponse = API.MessageSendResponse;
-  export import MessageSendParams = API.MessageSendParams;
+  export { Chats as Chats, type ChatRemoveResponse as ChatRemoveResponse };
 
-  export import Seed = API.Seed;
+  export {
+    Messages as Messages,
+    type MessageListResponse as MessageListResponse,
+    type MessageSendResponse as MessageSendResponse,
+    type MessageSendParams as MessageSendParams,
+  };
 
-  export import ResetDB = API.ResetDB;
-  export import ResetDBDeleteResponse = API.ResetDBDeleteResponse;
+  export { Seed as Seed };
 
-  export import Healthcheck = API.Healthcheck;
-  export import HealthcheckRetrieveResponse = API.HealthcheckRetrieveResponse;
+  export { ResetDB as ResetDB, type ResetDBDeleteResponse as ResetDBDeleteResponse };
+
+  export { Healthcheck as Healthcheck, type HealthcheckRetrieveResponse as HealthcheckRetrieveResponse };
 }
 
 export default Freeapiapp;

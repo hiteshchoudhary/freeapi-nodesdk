@@ -3,7 +3,6 @@
 import { APIResource } from '../../resource';
 import { isRequestOptions } from '../../core';
 import * as Core from '../../core';
-import * as StocksAPI from './stocks';
 
 export class Stocks extends APIResource {
   /**
@@ -196,9 +195,11 @@ export interface StockListParams {
   query?: string;
 }
 
-export namespace Stocks {
-  export import StockRetrieveResponse = StocksAPI.StockRetrieveResponse;
-  export import StockListResponse = StocksAPI.StockListResponse;
-  export import StockRandomResponse = StocksAPI.StockRandomResponse;
-  export import StockListParams = StocksAPI.StockListParams;
+export declare namespace Stocks {
+  export {
+    type StockRetrieveResponse as StockRetrieveResponse,
+    type StockListResponse as StockListResponse,
+    type StockRandomResponse as StockRandomResponse,
+    type StockListParams as StockListParams,
+  };
 }

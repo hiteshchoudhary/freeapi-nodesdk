@@ -3,7 +3,6 @@
 import { APIResource } from '../../../resource';
 import { isRequestOptions } from '../../../core';
 import * as Core from '../../../core';
-import * as PlaylistsAPI from './playlists';
 
 export class Playlists extends APIResource {
   /**
@@ -469,8 +468,10 @@ export interface PlaylistListParams {
   page?: string;
 }
 
-export namespace Playlists {
-  export import PlaylistRetrieveResponse = PlaylistsAPI.PlaylistRetrieveResponse;
-  export import PlaylistListResponse = PlaylistsAPI.PlaylistListResponse;
-  export import PlaylistListParams = PlaylistsAPI.PlaylistListParams;
+export declare namespace Playlists {
+  export {
+    type PlaylistRetrieveResponse as PlaylistRetrieveResponse,
+    type PlaylistListResponse as PlaylistListResponse,
+    type PlaylistListParams as PlaylistListParams,
+  };
 }

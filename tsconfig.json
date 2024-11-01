@@ -11,7 +11,7 @@
     "paths": {
       "freeapiapp/_shims/auto/*": ["src/_shims/auto/*-node"],
       "freeapiapp/*": ["src/*"],
-      "freeapiapp": ["src/index.ts"],
+      "freeapiapp": ["src/index.ts"]
     },
     "noEmit": true,
 

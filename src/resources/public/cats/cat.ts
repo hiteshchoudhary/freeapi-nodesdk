@@ -2,7 +2,6 @@
 
 import { APIResource } from '../../../resource';
 import * as Core from '../../../core';
-import * as CatAPI from './cat';
 
 export class Cat extends APIResource {
   /**
@@ -108,6 +107,6 @@ export namespace CatRandomResponse {
   }
 }
 
-export namespace Cat {
-  export import CatRandomResponse = CatAPI.CatRandomResponse;
+export declare namespace Cat {
+  export { type CatRandomResponse as CatRandomResponse };
 }

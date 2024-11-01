@@ -3,7 +3,6 @@
 import { APIResource } from '../../../resource';
 import { isRequestOptions } from '../../../core';
 import * as Core from '../../../core';
-import * as RelatedAPI from './related';
 
 export class Related extends APIResource {
   /**
@@ -215,7 +214,6 @@ export interface RelatedListParams {
   page?: string;
 }
 
-export namespace Related {
-  export import RelatedListResponse = RelatedAPI.RelatedListResponse;
-  export import RelatedListParams = RelatedAPI.RelatedListParams;
+export declare namespace Related {
+  export { type RelatedListResponse as RelatedListResponse, type RelatedListParams as RelatedListParams };
 }

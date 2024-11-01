@@ -3,8 +3,12 @@
 import { APIResource } from '../../../resource';
 import { isRequestOptions } from '../../../core';
 import * as Core from '../../../core';
-import * as ProfileAPI from './profile';
 import * as CoverImageAPI from './cover-image';
+import {
+  CoverImage as CoverImageAPICoverImage,
+  CoverImageUpdateParams,
+  CoverImageUpdateResponse,
+} from './cover-image';
 
 export class Profile extends APIResource {
   coverImage: CoverImageAPI.CoverImage = new CoverImageAPI.CoverImage(this._client);
@@ -221,11 +225,18 @@ export interface ProfileUpdateParams {
   phoneNumber?: string;
 }
 
-export namespace Profile {
-  export import ProfileRetrieveResponse = ProfileAPI.ProfileRetrieveResponse;
-  export import ProfileUpdateResponse = ProfileAPI.ProfileUpdateResponse;
-  export import ProfileUpdateParams = ProfileAPI.ProfileUpdateParams;
-  export import CoverImage = CoverImageAPI.CoverImage;
-  export import CoverImageUpdateResponse = CoverImageAPI.CoverImageUpdateResponse;
-  export import CoverImageUpdateParams = CoverImageAPI.CoverImageUpdateParams;
+Profile.CoverImage = CoverImageAPICoverImage;
+
+export declare namespace Profile {
+  export {
+    type ProfileRetrieveResponse as ProfileRetrieveResponse,
+    type ProfileUpdateResponse as ProfileUpdateResponse,
+    type ProfileUpdateParams as ProfileUpdateParams,
+  };
+
+  export {
+    CoverImageAPICoverImage as CoverImage,
+    type CoverImageUpdateResponse as CoverImageUpdateResponse,
+    type CoverImageUpdateParams as CoverImageUpdateParams,
+  };
 }

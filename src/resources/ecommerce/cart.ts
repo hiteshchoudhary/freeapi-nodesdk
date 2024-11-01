@@ -2,7 +2,6 @@
 
 import { APIResource } from '../../resource';
 import * as Core from '../../core';
-import * as CartAPI from './cart';
 
 export class Cart extends APIResource {
   /**
@@ -29,6 +28,6 @@ export interface CartClearResponse {
   success?: boolean;
 }
 
-export namespace Cart {
-  export import CartClearResponse = CartAPI.CartClearResponse;
+export declare namespace Cart {
+  export { type CartClearResponse as CartClearResponse };
 }
