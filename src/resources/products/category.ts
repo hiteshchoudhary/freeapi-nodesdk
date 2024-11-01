@@ -3,7 +3,6 @@
 import { APIResource } from '../../resource';
 import { isRequestOptions } from '../../core';
 import * as Core from '../../core';
-import * as CategoryAPI from './category';
 
 export class Category extends APIResource {
   /**
@@ -129,7 +128,9 @@ export interface CategoryRetrieveParams {
   page?: string;
 }
 
-export namespace Category {
-  export import CategoryRetrieveResponse = CategoryAPI.CategoryRetrieveResponse;
-  export import CategoryRetrieveParams = CategoryAPI.CategoryRetrieveParams;
+export declare namespace Category {
+  export {
+    type CategoryRetrieveResponse as CategoryRetrieveResponse,
+    type CategoryRetrieveParams as CategoryRetrieveParams,
+  };
 }

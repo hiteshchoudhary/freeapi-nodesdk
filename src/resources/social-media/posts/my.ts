@@ -3,7 +3,6 @@
 import { APIResource } from '../../../resource';
 import { isRequestOptions } from '../../../core';
 import * as Core from '../../../core';
-import * as MyAPI from './my';
 
 export class My extends APIResource {
   /**
@@ -164,7 +163,6 @@ export interface MyListParams {
   page?: string;
 }
 
-export namespace My {
-  export import MyListResponse = MyAPI.MyListResponse;
-  export import MyListParams = MyAPI.MyListParams;
+export declare namespace My {
+  export { type MyListResponse as MyListResponse, type MyListParams as MyListParams };
 }

@@ -2,10 +2,12 @@
 
 import { APIResource } from '../../../resource';
 import * as Core from '../../../core';
-import * as OrdersAPI from './orders';
 import * as AdminAPI from './admin';
+import { Admin, AdminListParams, AdminListResponse } from './admin';
 import * as StatusAPI from './status';
+import { Status, StatusUpdateParams, StatusUpdateResponse } from './status';
 import * as ProviderAPI from './provider/provider';
+import { Provider } from './provider/provider';
 
 export class Orders extends APIResource {
   admin: AdminAPI.Admin = new AdminAPI.Admin(this._client);
@@ -170,13 +172,24 @@ export namespace OrderRetrieveResponse {
   }
 }
 
-export namespace Orders {
-  export import OrderRetrieveResponse = OrdersAPI.OrderRetrieveResponse;
-  export import Admin = AdminAPI.Admin;
-  export import AdminListResponse = AdminAPI.AdminListResponse;
-  export import AdminListParams = AdminAPI.AdminListParams;
-  export import Provider = ProviderAPI.Provider;
-  export import Status = StatusAPI.Status;
-  export import StatusUpdateResponse = StatusAPI.StatusUpdateResponse;
-  export import StatusUpdateParams = StatusAPI.StatusUpdateParams;
+Orders.Admin = Admin;
+Orders.Provider = Provider;
+Orders.Status = Status;
+
+export declare namespace Orders {
+  export { type OrderRetrieveResponse as OrderRetrieveResponse };
+
+  export {
+    Admin as Admin,
+    type AdminListResponse as AdminListResponse,
+    type AdminListParams as AdminListParams,
+  };
+
+  export { Provider as Provider };
+
+  export {
+    Status as Status,
+    type StatusUpdateResponse as StatusUpdateResponse,
+    type StatusUpdateParams as StatusUpdateParams,
+  };
 }

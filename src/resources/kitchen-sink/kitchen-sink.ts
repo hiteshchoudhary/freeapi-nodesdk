@@ -2,9 +2,20 @@
 
 import { APIResource } from '../../resource';
 import * as HTTPMethodsAPI from './http-methods';
+import {
+  HTTPMethodCreateResponse,
+  HTTPMethodDeleteResponse,
+  HTTPMethodGetResponse,
+  HTTPMethodPutResponse,
+  HTTPMethodUpdateResponse,
+  HTTPMethods,
+} from './http-methods';
 import * as StatusCodesAPI from './status-codes';
+import { StatusCodeListResponse, StatusCodes } from './status-codes';
 import * as RequestAPI from './request/request';
+import { Request } from './request/request';
 import * as ResponseAPI from './response/response';
+import { Response } from './response/response';
 
 export class KitchenSink extends APIResource {
   httpMethods: HTTPMethodsAPI.HTTPMethods = new HTTPMethodsAPI.HTTPMethods(this._client);
@@ -13,15 +24,24 @@ export class KitchenSink extends APIResource {
   response: ResponseAPI.Response = new ResponseAPI.Response(this._client);
 }
 
-export namespace KitchenSink {
-  export import HTTPMethods = HTTPMethodsAPI.HTTPMethods;
-  export import HTTPMethodCreateResponse = HTTPMethodsAPI.HTTPMethodCreateResponse;
-  export import HTTPMethodUpdateResponse = HTTPMethodsAPI.HTTPMethodUpdateResponse;
-  export import HTTPMethodDeleteResponse = HTTPMethodsAPI.HTTPMethodDeleteResponse;
-  export import HTTPMethodGetResponse = HTTPMethodsAPI.HTTPMethodGetResponse;
-  export import HTTPMethodPutResponse = HTTPMethodsAPI.HTTPMethodPutResponse;
-  export import StatusCodes = StatusCodesAPI.StatusCodes;
-  export import StatusCodeListResponse = StatusCodesAPI.StatusCodeListResponse;
-  export import Request = RequestAPI.Request;
-  export import Response = ResponseAPI.Response;
+KitchenSink.HTTPMethods = HTTPMethods;
+KitchenSink.StatusCodes = StatusCodes;
+KitchenSink.Request = Request;
+KitchenSink.Response = Response;
+
+export declare namespace KitchenSink {
+  export {
+    HTTPMethods as HTTPMethods,
+    type HTTPMethodCreateResponse as HTTPMethodCreateResponse,
+    type HTTPMethodUpdateResponse as HTTPMethodUpdateResponse,
+    type HTTPMethodDeleteResponse as HTTPMethodDeleteResponse,
+    type HTTPMethodGetResponse as HTTPMethodGetResponse,
+    type HTTPMethodPutResponse as HTTPMethodPutResponse,
+  };
+
+  export { StatusCodes as StatusCodes, type StatusCodeListResponse as StatusCodeListResponse };
+
+  export { Request as Request };
+
+  export { Response as Response };
 }

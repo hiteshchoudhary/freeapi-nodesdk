@@ -3,7 +3,6 @@
 import { APIResource } from '../../../resource';
 import { isRequestOptions } from '../../../core';
 import * as Core from '../../../core';
-import * as CustomerAvailableAPI from './customer-available';
 
 export class CustomerAvailable extends APIResource {
   /**
@@ -102,7 +101,9 @@ export interface CustomerAvailableListParams {
   page?: string;
 }
 
-export namespace CustomerAvailable {
-  export import CustomerAvailableListResponse = CustomerAvailableAPI.CustomerAvailableListResponse;
-  export import CustomerAvailableListParams = CustomerAvailableAPI.CustomerAvailableListParams;
+export declare namespace CustomerAvailable {
+  export {
+    type CustomerAvailableListResponse as CustomerAvailableListResponse,
+    type CustomerAvailableListParams as CustomerAvailableListParams,
+  };
 }

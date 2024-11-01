@@ -2,7 +2,6 @@
 
 import { APIResource } from '../../resource';
 import * as Core from '../../core';
-import * as SubimageAPI from './subimage';
 
 export class Subimage extends APIResource {
   /**
@@ -73,6 +72,6 @@ export namespace SubimageRemoveResponse {
   }
 }
 
-export namespace Subimage {
-  export import SubimageRemoveResponse = SubimageAPI.SubimageRemoveResponse;
+export declare namespace Subimage {
+  export { type SubimageRemoveResponse as SubimageRemoveResponse };
 }

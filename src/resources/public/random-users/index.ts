@@ -1,9 +1,9 @@
 // File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
 export {
-  RandomUserRetrieveResponse,
-  RandomUserListResponse,
-  RandomUserListParams,
   RandomUsers,
+  type RandomUserRetrieveResponse,
+  type RandomUserListResponse,
+  type RandomUserListParams,
 } from './random-users';
-export { UserRandomResponse, User } from './user';
+export { User, type UserRandomResponse } from './user';
