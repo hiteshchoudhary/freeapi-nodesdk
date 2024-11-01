@@ -2,15 +2,52 @@
 
 import { APIResource } from '../../resource';
 import * as BooksAPI from './books';
+import { BookListParams, BookListResponse, BookRandomResponse, BookRetrieveResponse, Books } from './books';
 import * as QuotesAPI from './quotes';
+import {
+  QuoteListParams,
+  QuoteListResponse,
+  QuoteRandomResponse,
+  QuoteRetrieveResponse,
+  Quotes,
+} from './quotes';
 import * as StocksAPI from './stocks';
+import {
+  StockListParams,
+  StockListResponse,
+  StockRandomResponse,
+  StockRetrieveResponse,
+  Stocks,
+} from './stocks';
 import * as CatsAPI from './cats/cats';
+import { CatListParams, CatListResponse, CatRetrieveResponse, Cats } from './cats/cats';
 import * as DogsAPI from './dogs/dogs';
+import { DogListParams, DogListResponse, DogRetrieveResponse, Dogs } from './dogs/dogs';
 import * as MealsAPI from './meals/meals';
+import { MealListParams, MealListResponse, MealRetrieveResponse, Meals } from './meals/meals';
 import * as RandomJokesAPI from './random-jokes/random-jokes';
+import {
+  RandomJokeListParams,
+  RandomJokeListResponse,
+  RandomJokeRetrieveResponse,
+  RandomJokes,
+} from './random-jokes/random-jokes';
 import * as RandomProductsAPI from './random-products/random-products';
+import {
+  RandomProductListParams,
+  RandomProductListResponse,
+  RandomProductRetrieveResponse,
+  RandomProducts,
+} from './random-products/random-products';
 import * as RandomUsersAPI from './random-users/random-users';
+import {
+  RandomUserListParams,
+  RandomUserListResponse,
+  RandomUserRetrieveResponse,
+  RandomUsers,
+} from './random-users/random-users';
 import * as YoutubeAPI from './youtube/youtube';
+import { Youtube } from './youtube/youtube';
 
 export class Public extends APIResource {
   randomUsers: RandomUsersAPI.RandomUsers = new RandomUsersAPI.RandomUsers(this._client);
@@ -25,45 +62,83 @@ export class Public extends APIResource {
   youtube: YoutubeAPI.Youtube = new YoutubeAPI.Youtube(this._client);
 }
 
-export namespace Public {
-  export import RandomUsers = RandomUsersAPI.RandomUsers;
-  export import RandomUserRetrieveResponse = RandomUsersAPI.RandomUserRetrieveResponse;
-  export import RandomUserListResponse = RandomUsersAPI.RandomUserListResponse;
-  export import RandomUserListParams = RandomUsersAPI.RandomUserListParams;
-  export import RandomProducts = RandomProductsAPI.RandomProducts;
-  export import RandomProductRetrieveResponse = RandomProductsAPI.RandomProductRetrieveResponse;
-  export import RandomProductListResponse = RandomProductsAPI.RandomProductListResponse;
-  export import RandomProductListParams = RandomProductsAPI.RandomProductListParams;
-  export import RandomJokes = RandomJokesAPI.RandomJokes;
-  export import RandomJokeRetrieveResponse = RandomJokesAPI.RandomJokeRetrieveResponse;
-  export import RandomJokeListResponse = RandomJokesAPI.RandomJokeListResponse;
-  export import RandomJokeListParams = RandomJokesAPI.RandomJokeListParams;
-  export import Books = BooksAPI.Books;
-  export import BookRetrieveResponse = BooksAPI.BookRetrieveResponse;
-  export import BookListResponse = BooksAPI.BookListResponse;
-  export import BookRandomResponse = BooksAPI.BookRandomResponse;
-  export import BookListParams = BooksAPI.BookListParams;
-  export import Stocks = StocksAPI.Stocks;
-  export import StockRetrieveResponse = StocksAPI.StockRetrieveResponse;
-  export import StockListResponse = StocksAPI.StockListResponse;
-  export import StockRandomResponse = StocksAPI.StockRandomResponse;
-  export import StockListParams = StocksAPI.StockListParams;
-  export import Quotes = QuotesAPI.Quotes;
-  export import QuoteRetrieveResponse = QuotesAPI.QuoteRetrieveResponse;
-  export import QuoteListResponse = QuotesAPI.QuoteListResponse;
-  export import QuoteRandomResponse = QuotesAPI.QuoteRandomResponse;
-  export import QuoteListParams = QuotesAPI.QuoteListParams;
-  export import Meals = MealsAPI.Meals;
-  export import MealRetrieveResponse = MealsAPI.MealRetrieveResponse;
-  export import MealListResponse = MealsAPI.MealListResponse;
-  export import MealListParams = MealsAPI.MealListParams;
-  export import Dogs = DogsAPI.Dogs;
-  export import DogRetrieveResponse = DogsAPI.DogRetrieveResponse;
-  export import DogListResponse = DogsAPI.DogListResponse;
-  export import DogListParams = DogsAPI.DogListParams;
-  export import Cats = CatsAPI.Cats;
-  export import CatRetrieveResponse = CatsAPI.CatRetrieveResponse;
-  export import CatListResponse = CatsAPI.CatListResponse;
-  export import CatListParams = CatsAPI.CatListParams;
-  export import Youtube = YoutubeAPI.Youtube;
+Public.RandomUsers = RandomUsers;
+Public.RandomProducts = RandomProducts;
+Public.RandomJokes = RandomJokes;
+Public.Books = Books;
+Public.Stocks = Stocks;
+Public.Quotes = Quotes;
+Public.Meals = Meals;
+Public.Dogs = Dogs;
+Public.Cats = Cats;
+Public.Youtube = Youtube;
+
+export declare namespace Public {
+  export {
+    RandomUsers as RandomUsers,
+    type RandomUserRetrieveResponse as RandomUserRetrieveResponse,
+    type RandomUserListResponse as RandomUserListResponse,
+    type RandomUserListParams as RandomUserListParams,
+  };
+
+  export {
+    RandomProducts as RandomProducts,
+    type RandomProductRetrieveResponse as RandomProductRetrieveResponse,
+    type RandomProductListResponse as RandomProductListResponse,
+    type RandomProductListParams as RandomProductListParams,
+  };
+
+  export {
+    RandomJokes as RandomJokes,
+    type RandomJokeRetrieveResponse as RandomJokeRetrieveResponse,
+    type RandomJokeListResponse as RandomJokeListResponse,
+    type RandomJokeListParams as RandomJokeListParams,
+  };
+
+  export {
+    Books as Books,
+    type BookRetrieveResponse as BookRetrieveResponse,
+    type BookListResponse as BookListResponse,
+    type BookRandomResponse as BookRandomResponse,
+    type BookListParams as BookListParams,
+  };
+
+  export {
+    Stocks as Stocks,
+    type StockRetrieveResponse as StockRetrieveResponse,
+    type StockListResponse as StockListResponse,
+    type StockRandomResponse as StockRandomResponse,
+    type StockListParams as StockListParams,
+  };
+
+  export {
+    Quotes as Quotes,
+    type QuoteRetrieveResponse as QuoteRetrieveResponse,
+    type QuoteListResponse as QuoteListResponse,
+    type QuoteRandomResponse as QuoteRandomResponse,
+    type QuoteListParams as QuoteListParams,
+  };
+
+  export {
+    Meals as Meals,
+    type MealRetrieveResponse as MealRetrieveResponse,
+    type MealListResponse as MealListResponse,
+    type MealListParams as MealListParams,
+  };
+
+  export {
+    Dogs as Dogs,
+    type DogRetrieveResponse as DogRetrieveResponse,
+    type DogListResponse as DogListResponse,
+    type DogListParams as DogListParams,
+  };
+
+  export {
+    Cats as Cats,
+    type CatRetrieveResponse as CatRetrieveResponse,
+    type CatListResponse as CatListResponse,
+    type CatListParams as CatListParams,
+  };
+
+  export { Youtube as Youtube };
 }

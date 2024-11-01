@@ -3,8 +3,8 @@
 import { APIResource } from '../../../resource';
 import { isRequestOptions } from '../../../core';
 import * as Core from '../../../core';
-import * as MealsAPI from './meals';
 import * as MealAPI from './meal';
+import { Meal, MealRandomResponse } from './meal';
 
 export class Meals extends APIResource {
   meal: MealAPI.Meal = new MealAPI.Meal(this._client);
@@ -311,10 +311,14 @@ export interface MealListParams {
   query?: string;
 }
 
-export namespace Meals {
-  export import MealRetrieveResponse = MealsAPI.MealRetrieveResponse;
-  export import MealListResponse = MealsAPI.MealListResponse;
-  export import MealListParams = MealsAPI.MealListParams;
-  export import Meal = MealAPI.Meal;
-  export import MealRandomResponse = MealAPI.MealRandomResponse;
+Meals.Meal = Meal;
+
+export declare namespace Meals {
+  export {
+    type MealRetrieveResponse as MealRetrieveResponse,
+    type MealListResponse as MealListResponse,
+    type MealListParams as MealListParams,
+  };
+
+  export { Meal as Meal, type MealRandomResponse as MealRandomResponse };
 }

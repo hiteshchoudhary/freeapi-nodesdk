@@ -3,7 +3,6 @@
 import { APIResource } from '../../../resource';
 import { isRequestOptions } from '../../../core';
 import * as Core from '../../../core';
-import * as UserPostsAPI from './user-posts';
 
 export class UserPosts extends APIResource {
   /**
@@ -170,7 +169,6 @@ export interface UserPostListParams {
   page?: string;
 }
 
-export namespace UserPosts {
-  export import UserPostListResponse = UserPostsAPI.UserPostListResponse;
-  export import UserPostListParams = UserPostsAPI.UserPostListParams;
+export declare namespace UserPosts {
+  export { type UserPostListResponse as UserPostListResponse, type UserPostListParams as UserPostListParams };
 }

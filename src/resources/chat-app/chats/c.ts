@@ -2,7 +2,6 @@
 
 import { APIResource } from '../../../resource';
 import * as Core from '../../../core';
-import * as CAPI from './c';
 
 export class C extends APIResource {
   /**
@@ -82,6 +81,6 @@ export namespace CCreateResponse {
   }
 }
 
-export namespace C {
-  export import CCreateResponse = CAPI.CCreateResponse;
+export declare namespace C {
+  export { type CCreateResponse as CCreateResponse };
 }

@@ -3,7 +3,6 @@
 import { APIResource } from '../resource';
 import { isRequestOptions } from '../core';
 import * as Core from '../core';
-import * as MessagesAPI from './messages';
 
 export class Messages extends APIResource {
   /**
@@ -180,8 +179,10 @@ export interface MessageSendParams {
   content?: string;
 }
 
-export namespace Messages {
-  export import MessageListResponse = MessagesAPI.MessageListResponse;
-  export import MessageSendResponse = MessagesAPI.MessageSendResponse;
-  export import MessageSendParams = MessagesAPI.MessageSendParams;
+export declare namespace Messages {
+  export {
+    type MessageListResponse as MessageListResponse,
+    type MessageSendResponse as MessageSendResponse,
+    type MessageSendParams as MessageSendParams,
+  };
 }

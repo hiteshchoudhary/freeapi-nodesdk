@@ -2,7 +2,6 @@
 
 import { APIResource } from '../../../resource';
 import * as Core from '../../../core';
-import * as CommentsAPI from './comments';
 
 export class Comments extends APIResource {
   /**
@@ -83,6 +82,6 @@ export namespace CommentRetrieveResponse {
   }
 }
 
-export namespace Comments {
-  export import CommentRetrieveResponse = CommentsAPI.CommentRetrieveResponse;
+export declare namespace Comments {
+  export { type CommentRetrieveResponse as CommentRetrieveResponse };
 }

@@ -3,8 +3,8 @@
 import { APIResource } from '../../../resource';
 import { isRequestOptions } from '../../../core';
 import * as Core from '../../../core';
-import * as RandomProductsAPI from './random-products';
 import * as ProductAPI from './product';
+import { Product, ProductRandomResponse } from './product';
 
 export class RandomProducts extends APIResource {
   product: ProductAPI.Product = new ProductAPI.Product(this._client);
@@ -135,10 +135,14 @@ export interface RandomProductListParams {
   query?: string;
 }
 
-export namespace RandomProducts {
-  export import RandomProductRetrieveResponse = RandomProductsAPI.RandomProductRetrieveResponse;
-  export import RandomProductListResponse = RandomProductsAPI.RandomProductListResponse;
-  export import RandomProductListParams = RandomProductsAPI.RandomProductListParams;
-  export import Product = ProductAPI.Product;
-  export import ProductRandomResponse = ProductAPI.ProductRandomResponse;
+RandomProducts.Product = Product;
+
+export declare namespace RandomProducts {
+  export {
+    type RandomProductRetrieveResponse as RandomProductRetrieveResponse,
+    type RandomProductListResponse as RandomProductListResponse,
+    type RandomProductListParams as RandomProductListParams,
+  };
+
+  export { Product as Product, type ProductRandomResponse as ProductRandomResponse };
 }

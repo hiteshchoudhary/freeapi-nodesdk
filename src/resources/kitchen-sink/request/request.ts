@@ -2,10 +2,19 @@
 
 import { APIResource } from '../../../resource';
 import * as HeadersAPI from './headers';
+import { HeaderRetrieveResponse, Headers } from './headers';
 import * as IPAPI from './ip';
+import { IP, IPRetrieveResponse } from './ip';
 import * as PathVariableAPI from './path-variable';
+import { PathVariable, PathVariableRetrieveResponse } from './path-variable';
 import * as QueryParameterAPI from './query-parameter';
+import {
+  QueryParameter,
+  QueryParameterRetrieveParams,
+  QueryParameterRetrieveResponse,
+} from './query-parameter';
 import * as UserAgentAPI from './user-agent';
+import { UserAgent, UserAgentRetrieveResponse } from './user-agent';
 
 export class Request extends APIResource {
   headers: HeadersAPI.Headers = new HeadersAPI.Headers(this._client);
@@ -15,16 +24,24 @@ export class Request extends APIResource {
   queryParameter: QueryParameterAPI.QueryParameter = new QueryParameterAPI.QueryParameter(this._client);
 }
 
-export namespace Request {
-  export import Headers = HeadersAPI.Headers;
-  export import HeaderRetrieveResponse = HeadersAPI.HeaderRetrieveResponse;
-  export import IP = IPAPI.IP;
-  export import IPRetrieveResponse = IPAPI.IPRetrieveResponse;
-  export import UserAgent = UserAgentAPI.UserAgent;
-  export import UserAgentRetrieveResponse = UserAgentAPI.UserAgentRetrieveResponse;
-  export import PathVariable = PathVariableAPI.PathVariable;
-  export import PathVariableRetrieveResponse = PathVariableAPI.PathVariableRetrieveResponse;
-  export import QueryParameter = QueryParameterAPI.QueryParameter;
-  export import QueryParameterRetrieveResponse = QueryParameterAPI.QueryParameterRetrieveResponse;
-  export import QueryParameterRetrieveParams = QueryParameterAPI.QueryParameterRetrieveParams;
+Request.Headers = Headers;
+Request.IP = IP;
+Request.UserAgent = UserAgent;
+Request.PathVariable = PathVariable;
+Request.QueryParameter = QueryParameter;
+
+export declare namespace Request {
+  export { Headers as Headers, type HeaderRetrieveResponse as HeaderRetrieveResponse };
+
+  export { IP as IP, type IPRetrieveResponse as IPRetrieveResponse };
+
+  export { UserAgent as UserAgent, type UserAgentRetrieveResponse as UserAgentRetrieveResponse };
+
+  export { PathVariable as PathVariable, type PathVariableRetrieveResponse as PathVariableRetrieveResponse };
+
+  export {
+    QueryParameter as QueryParameter,
+    type QueryParameterRetrieveResponse as QueryParameterRetrieveResponse,
+    type QueryParameterRetrieveParams as QueryParameterRetrieveParams,
+  };
 }

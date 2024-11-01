@@ -2,7 +2,6 @@
 
 import { APIResource } from '../../resource';
 import * as Core from '../../core';
-import * as EcommerceAPI from './ecommerce';
 
 export class Ecommerce extends APIResource {
   /**
@@ -27,6 +26,6 @@ export interface EcommerceCreateResponse {
   success?: boolean;
 }
 
-export namespace Ecommerce {
-  export import EcommerceCreateResponse = EcommerceAPI.EcommerceCreateResponse;
+export declare namespace Ecommerce {
+  export { type EcommerceCreateResponse as EcommerceCreateResponse };
 }

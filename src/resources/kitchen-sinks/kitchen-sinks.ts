@@ -3,8 +3,15 @@
 import { APIResource } from '../../resource';
 import { isRequestOptions } from '../../core';
 import * as Core from '../../core';
-import * as KitchenSinksAPI from './kitchen-sinks';
 import * as CookiesAPI from './cookies';
+import {
+  CookieCreateParams,
+  CookieCreateResponse,
+  CookieRemoveParams,
+  CookieRemoveResponse,
+  CookieRetrieveResponse,
+  Cookies,
+} from './cookies';
 
 export class KitchenSinks extends APIResource {
   cookies: CookiesAPI.Cookies = new CookiesAPI.Cookies(this._client);
@@ -182,14 +189,21 @@ export interface KitchenSinkRedirectToParams {
   url?: string;
 }
 
-export namespace KitchenSinks {
-  export import KitchenSinkResponseBrotliResponse = KitchenSinksAPI.KitchenSinkResponseBrotliResponse;
-  export import KitchenSinkResponseGzipResponse = KitchenSinksAPI.KitchenSinkResponseGzipResponse;
-  export import KitchenSinkRedirectToParams = KitchenSinksAPI.KitchenSinkRedirectToParams;
-  export import Cookies = CookiesAPI.Cookies;
-  export import CookieCreateResponse = CookiesAPI.CookieCreateResponse;
-  export import CookieRetrieveResponse = CookiesAPI.CookieRetrieveResponse;
-  export import CookieRemoveResponse = CookiesAPI.CookieRemoveResponse;
-  export import CookieCreateParams = CookiesAPI.CookieCreateParams;
-  export import CookieRemoveParams = CookiesAPI.CookieRemoveParams;
+KitchenSinks.Cookies = Cookies;
+
+export declare namespace KitchenSinks {
+  export {
+    type KitchenSinkResponseBrotliResponse as KitchenSinkResponseBrotliResponse,
+    type KitchenSinkResponseGzipResponse as KitchenSinkResponseGzipResponse,
+    type KitchenSinkRedirectToParams as KitchenSinkRedirectToParams,
+  };
+
+  export {
+    Cookies as Cookies,
+    type CookieCreateResponse as CookieCreateResponse,
+    type CookieRetrieveResponse as CookieRetrieveResponse,
+    type CookieRemoveResponse as CookieRemoveResponse,
+    type CookieCreateParams as CookieCreateParams,
+    type CookieRemoveParams as CookieRemoveParams,
+  };
 }

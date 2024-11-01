@@ -2,7 +2,6 @@
 
 import { APIResource } from '../../resource';
 import * as Core from '../../core';
-import * as StatusCodesAPI from './status-codes';
 
 export class StatusCodes extends APIResource {
   /**
@@ -780,6 +779,6 @@ export namespace StatusCodeListResponse {
   }
 }
 
-export namespace StatusCodes {
-  export import StatusCodeListResponse = StatusCodesAPI.StatusCodeListResponse;
+export declare namespace StatusCodes {
+  export { type StatusCodeListResponse as StatusCodeListResponse };
 }

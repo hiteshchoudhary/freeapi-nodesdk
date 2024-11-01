@@ -2,7 +2,6 @@
 
 import { APIResource } from '../../resource';
 import * as Core from '../../core';
-import * as TodosAPI from './todos';
 
 export class Todos extends APIResource {
   /**
@@ -27,6 +26,6 @@ export interface TodoCreateResponse {
   success?: boolean;
 }
 
-export namespace Todos {
-  export import TodoCreateResponse = TodosAPI.TodoCreateResponse;
+export declare namespace Todos {
+  export { type TodoCreateResponse as TodoCreateResponse };
 }

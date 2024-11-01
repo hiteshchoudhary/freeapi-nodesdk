@@ -3,7 +3,6 @@
 import { APIResource } from '../../resource';
 import { isRequestOptions } from '../../core';
 import * as Core from '../../core';
-import * as QuotesAPI from './quotes';
 
 export class Quotes extends APIResource {
   /**
@@ -164,9 +163,11 @@ export interface QuoteListParams {
   query?: string;
 }
 
-export namespace Quotes {
-  export import QuoteRetrieveResponse = QuotesAPI.QuoteRetrieveResponse;
-  export import QuoteListResponse = QuotesAPI.QuoteListResponse;
-  export import QuoteRandomResponse = QuotesAPI.QuoteRandomResponse;
-  export import QuoteListParams = QuotesAPI.QuoteListParams;
+export declare namespace Quotes {
+  export {
+    type QuoteRetrieveResponse as QuoteRetrieveResponse,
+    type QuoteListResponse as QuoteListResponse,
+    type QuoteRandomResponse as QuoteRandomResponse,
+    type QuoteListParams as QuoteListParams,
+  };
 }

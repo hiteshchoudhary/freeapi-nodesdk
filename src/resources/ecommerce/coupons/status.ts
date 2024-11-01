@@ -3,7 +3,6 @@
 import { APIResource } from '../../../resource';
 import { isRequestOptions } from '../../../core';
 import * as Core from '../../../core';
-import * as StatusAPI from './status';
 
 export class Status extends APIResource {
   /**
@@ -80,7 +79,6 @@ export interface StatusUpdateParams {
   isActive?: boolean;
 }
 
-export namespace Status {
-  export import StatusUpdateResponse = StatusAPI.StatusUpdateResponse;
-  export import StatusUpdateParams = StatusAPI.StatusUpdateParams;
+export declare namespace Status {
+  export { type StatusUpdateResponse as StatusUpdateResponse, type StatusUpdateParams as StatusUpdateParams };
 }

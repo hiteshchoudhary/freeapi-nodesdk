@@ -3,7 +3,6 @@
 import { APIResource } from '../../resource';
 import { isRequestOptions } from '../../core';
 import * as Core from '../../core';
-import * as AvatarAPI from './avatar';
 
 export class Avatar extends APIResource {
   /**
@@ -84,7 +83,6 @@ export interface AvatarUpdateParams {
   avatar?: Core.Uploadable;
 }
 
-export namespace Avatar {
-  export import AvatarUpdateResponse = AvatarAPI.AvatarUpdateResponse;
-  export import AvatarUpdateParams = AvatarAPI.AvatarUpdateParams;
+export declare namespace Avatar {
+  export { type AvatarUpdateResponse as AvatarUpdateResponse, type AvatarUpdateParams as AvatarUpdateParams };
 }

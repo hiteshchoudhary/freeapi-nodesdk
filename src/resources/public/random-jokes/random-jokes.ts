@@ -3,8 +3,8 @@
 import { APIResource } from '../../../resource';
 import { isRequestOptions } from '../../../core';
 import * as Core from '../../../core';
-import * as RandomJokesAPI from './random-jokes';
 import * as JokeAPI from './joke';
+import { Joke, JokeRandomResponse } from './joke';
 
 export class RandomJokes extends APIResource {
   joke: JokeAPI.Joke = new JokeAPI.Joke(this._client);
@@ -111,10 +111,14 @@ export interface RandomJokeListParams {
   query?: string;
 }
 
-export namespace RandomJokes {
-  export import RandomJokeRetrieveResponse = RandomJokesAPI.RandomJokeRetrieveResponse;
-  export import RandomJokeListResponse = RandomJokesAPI.RandomJokeListResponse;
-  export import RandomJokeListParams = RandomJokesAPI.RandomJokeListParams;
-  export import Joke = JokeAPI.Joke;
-  export import JokeRandomResponse = JokeAPI.JokeRandomResponse;
+RandomJokes.Joke = Joke;
+
+export declare namespace RandomJokes {
+  export {
+    type RandomJokeRetrieveResponse as RandomJokeRetrieveResponse,
+    type RandomJokeListResponse as RandomJokeListResponse,
+    type RandomJokeListParams as RandomJokeListParams,
+  };
+
+  export { Joke as Joke, type JokeRandomResponse as JokeRandomResponse };
 }

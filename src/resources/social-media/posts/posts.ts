@@ -3,11 +3,14 @@
 import { APIResource } from '../../../resource';
 import { isRequestOptions } from '../../../core';
 import * as Core from '../../../core';
-import * as PostsAPI from './posts';
 import * as ImagesAPI from './images';
+import { ImageRemoveResponse, Images } from './images';
 import * as MyAPI from './my';
+import { My, MyListParams, MyListResponse } from './my';
 import * as TagAPI from './tag';
+import { Tag, TagListParams, TagListResponse } from './tag';
 import * as UserPostsAPI from './user-posts';
+import { UserPostListParams, UserPostListResponse, UserPosts } from './user-posts';
 
 export class Posts extends APIResource {
   my: MyAPI.My = new MyAPI.My(this._client);
@@ -645,25 +648,33 @@ export interface PostListParams {
   page?: string;
 }
 
-export namespace Posts {
-  export import PostCreateResponse = PostsAPI.PostCreateResponse;
-  export import PostRetrieveResponse = PostsAPI.PostRetrieveResponse;
-  export import PostUpdateResponse = PostsAPI.PostUpdateResponse;
-  export import PostListResponse = PostsAPI.PostListResponse;
-  export import PostDeleteResponse = PostsAPI.PostDeleteResponse;
-  export import PostLikeResponse = PostsAPI.PostLikeResponse;
-  export import PostCreateParams = PostsAPI.PostCreateParams;
-  export import PostUpdateParams = PostsAPI.PostUpdateParams;
-  export import PostListParams = PostsAPI.PostListParams;
-  export import My = MyAPI.My;
-  export import MyListResponse = MyAPI.MyListResponse;
-  export import MyListParams = MyAPI.MyListParams;
-  export import UserPosts = UserPostsAPI.UserPosts;
-  export import UserPostListResponse = UserPostsAPI.UserPostListResponse;
-  export import UserPostListParams = UserPostsAPI.UserPostListParams;
-  export import Tag = TagAPI.Tag;
-  export import TagListResponse = TagAPI.TagListResponse;
-  export import TagListParams = TagAPI.TagListParams;
-  export import Images = ImagesAPI.Images;
-  export import ImageRemoveResponse = ImagesAPI.ImageRemoveResponse;
+Posts.My = My;
+Posts.UserPosts = UserPosts;
+Posts.Tag = Tag;
+Posts.Images = Images;
+
+export declare namespace Posts {
+  export {
+    type PostCreateResponse as PostCreateResponse,
+    type PostRetrieveResponse as PostRetrieveResponse,
+    type PostUpdateResponse as PostUpdateResponse,
+    type PostListResponse as PostListResponse,
+    type PostDeleteResponse as PostDeleteResponse,
+    type PostLikeResponse as PostLikeResponse,
+    type PostCreateParams as PostCreateParams,
+    type PostUpdateParams as PostUpdateParams,
+    type PostListParams as PostListParams,
+  };
+
+  export { My as My, type MyListResponse as MyListResponse, type MyListParams as MyListParams };
+
+  export {
+    UserPosts as UserPosts,
+    type UserPostListResponse as UserPostListResponse,
+    type UserPostListParams as UserPostListParams,
+  };
+
+  export { Tag as Tag, type TagListResponse as TagListResponse, type TagListParams as TagListParams };
+
+  export { Images as Images, type ImageRemoveResponse as ImageRemoveResponse };
 }

@@ -3,8 +3,8 @@
 import { APIResource } from '../../../resource';
 import { isRequestOptions } from '../../../core';
 import * as Core from '../../../core';
-import * as CatsAPI from './cats';
 import * as CatAPI from './cat';
+import { Cat, CatRandomResponse } from './cat';
 
 export class Cats extends APIResource {
   cat: CatAPI.Cat = new CatAPI.Cat(this._client);
@@ -263,10 +263,14 @@ export interface CatListParams {
   query?: string;
 }
 
-export namespace Cats {
-  export import CatRetrieveResponse = CatsAPI.CatRetrieveResponse;
-  export import CatListResponse = CatsAPI.CatListResponse;
-  export import CatListParams = CatsAPI.CatListParams;
-  export import Cat = CatAPI.Cat;
-  export import CatRandomResponse = CatAPI.CatRandomResponse;
+Cats.Cat = Cat;
+
+export declare namespace Cats {
+  export {
+    type CatRetrieveResponse as CatRetrieveResponse,
+    type CatListResponse as CatListResponse,
+    type CatListParams as CatListParams,
+  };
+
+  export { Cat as Cat, type CatRandomResponse as CatRandomResponse };
 }

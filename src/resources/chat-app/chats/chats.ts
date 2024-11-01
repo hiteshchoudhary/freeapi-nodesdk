@@ -2,9 +2,10 @@
 
 import { APIResource } from '../../../resource';
 import * as Core from '../../../core';
-import * as ChatsAPI from './chats';
 import * as CAPI from './c';
+import { C, CCreateResponse } from './c';
 import * as UsersAPI from './users';
+import { UserListResponse, Users } from './users';
 
 export class Chats extends APIResource {
   users: UsersAPI.Users = new UsersAPI.Users(this._client);
@@ -89,10 +90,13 @@ export namespace ChatListResponse {
   }
 }
 
-export namespace Chats {
-  export import ChatListResponse = ChatsAPI.ChatListResponse;
-  export import Users = UsersAPI.Users;
-  export import UserListResponse = UsersAPI.UserListResponse;
-  export import C = CAPI.C;
-  export import CCreateResponse = CAPI.CCreateResponse;
+Chats.Users = Users;
+Chats.C = C;
+
+export declare namespace Chats {
+  export { type ChatListResponse as ChatListResponse };
+
+  export { Users as Users, type UserListResponse as UserListResponse };
+
+  export { C as C, type CCreateResponse as CCreateResponse };
 }

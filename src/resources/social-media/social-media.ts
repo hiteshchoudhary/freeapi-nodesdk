@@ -2,10 +2,46 @@
 
 import { APIResource } from '../../resource';
 import * as BookmarksAPI from './bookmarks';
+import {
+  BookmarkCreateResponse,
+  BookmarkRetrieveParams,
+  BookmarkRetrieveResponse,
+  Bookmarks,
+} from './bookmarks';
 import * as CommentsAPI from './comments';
+import {
+  CommentCreateParams,
+  CommentCreateResponse,
+  CommentDeleteResponse,
+  CommentLikeResponse,
+  CommentListParams,
+  CommentListResponse,
+  CommentUpdateParams,
+  CommentUpdateResponse,
+  Comments,
+} from './comments';
 import * as FollowAPI from './follow/follow';
+import { Follow } from './follow/follow';
 import * as PostsAPI from './posts/posts';
+import {
+  PostCreateParams,
+  PostCreateResponse,
+  PostDeleteResponse,
+  PostLikeResponse,
+  PostListParams,
+  PostListResponse,
+  PostRetrieveResponse,
+  PostUpdateParams,
+  PostUpdateResponse,
+  Posts,
+} from './posts/posts';
 import * as ProfileAPI from './profile/profile';
+import {
+  Profile,
+  ProfileRetrieveResponse,
+  ProfileUpdateParams,
+  ProfileUpdateResponse,
+} from './profile/profile';
 
 export class SocialMedia extends APIResource {
   profile: ProfileAPI.Profile = new ProfileAPI.Profile(this._client);
@@ -15,33 +51,51 @@ export class SocialMedia extends APIResource {
   follow: FollowAPI.Follow = new FollowAPI.Follow(this._client);
 }
 
-export namespace SocialMedia {
-  export import Profile = ProfileAPI.Profile;
-  export import ProfileRetrieveResponse = ProfileAPI.ProfileRetrieveResponse;
-  export import ProfileUpdateResponse = ProfileAPI.ProfileUpdateResponse;
-  export import ProfileUpdateParams = ProfileAPI.ProfileUpdateParams;
-  export import Posts = PostsAPI.Posts;
-  export import PostCreateResponse = PostsAPI.PostCreateResponse;
-  export import PostRetrieveResponse = PostsAPI.PostRetrieveResponse;
-  export import PostUpdateResponse = PostsAPI.PostUpdateResponse;
-  export import PostListResponse = PostsAPI.PostListResponse;
-  export import PostDeleteResponse = PostsAPI.PostDeleteResponse;
-  export import PostLikeResponse = PostsAPI.PostLikeResponse;
-  export import PostCreateParams = PostsAPI.PostCreateParams;
-  export import PostUpdateParams = PostsAPI.PostUpdateParams;
-  export import PostListParams = PostsAPI.PostListParams;
-  export import Comments = CommentsAPI.Comments;
-  export import CommentCreateResponse = CommentsAPI.CommentCreateResponse;
-  export import CommentUpdateResponse = CommentsAPI.CommentUpdateResponse;
-  export import CommentListResponse = CommentsAPI.CommentListResponse;
-  export import CommentDeleteResponse = CommentsAPI.CommentDeleteResponse;
-  export import CommentLikeResponse = CommentsAPI.CommentLikeResponse;
-  export import CommentCreateParams = CommentsAPI.CommentCreateParams;
-  export import CommentUpdateParams = CommentsAPI.CommentUpdateParams;
-  export import CommentListParams = CommentsAPI.CommentListParams;
-  export import Bookmarks = BookmarksAPI.Bookmarks;
-  export import BookmarkCreateResponse = BookmarksAPI.BookmarkCreateResponse;
-  export import BookmarkRetrieveResponse = BookmarksAPI.BookmarkRetrieveResponse;
-  export import BookmarkRetrieveParams = BookmarksAPI.BookmarkRetrieveParams;
-  export import Follow = FollowAPI.Follow;
+SocialMedia.Profile = Profile;
+SocialMedia.Posts = Posts;
+SocialMedia.Comments = Comments;
+SocialMedia.Bookmarks = Bookmarks;
+SocialMedia.Follow = Follow;
+
+export declare namespace SocialMedia {
+  export {
+    Profile as Profile,
+    type ProfileRetrieveResponse as ProfileRetrieveResponse,
+    type ProfileUpdateResponse as ProfileUpdateResponse,
+    type ProfileUpdateParams as ProfileUpdateParams,
+  };
+
+  export {
+    Posts as Posts,
+    type PostCreateResponse as PostCreateResponse,
+    type PostRetrieveResponse as PostRetrieveResponse,
+    type PostUpdateResponse as PostUpdateResponse,
+    type PostListResponse as PostListResponse,
+    type PostDeleteResponse as PostDeleteResponse,
+    type PostLikeResponse as PostLikeResponse,
+    type PostCreateParams as PostCreateParams,
+    type PostUpdateParams as PostUpdateParams,
+    type PostListParams as PostListParams,
+  };
+
+  export {
+    Comments as Comments,
+    type CommentCreateResponse as CommentCreateResponse,
+    type CommentUpdateResponse as CommentUpdateResponse,
+    type CommentListResponse as CommentListResponse,
+    type CommentDeleteResponse as CommentDeleteResponse,
+    type CommentLikeResponse as CommentLikeResponse,
+    type CommentCreateParams as CommentCreateParams,
+    type CommentUpdateParams as CommentUpdateParams,
+    type CommentListParams as CommentListParams,
+  };
+
+  export {
+    Bookmarks as Bookmarks,
+    type BookmarkCreateResponse as BookmarkCreateResponse,
+    type BookmarkRetrieveResponse as BookmarkRetrieveResponse,
+    type BookmarkRetrieveParams as BookmarkRetrieveParams,
+  };
+
+  export { Follow as Follow };
 }

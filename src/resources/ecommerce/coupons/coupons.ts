@@ -3,9 +3,14 @@
 import { APIResource } from '../../../resource';
 import { isRequestOptions } from '../../../core';
 import * as Core from '../../../core';
-import * as CouponsAPI from './coupons';
 import * as CustomerAvailableAPI from './customer-available';
+import {
+  CustomerAvailable,
+  CustomerAvailableListParams,
+  CustomerAvailableListResponse,
+} from './customer-available';
 import * as StatusAPI from './status';
+import { Status, StatusUpdateParams, StatusUpdateResponse } from './status';
 
 export class Coupons extends APIResource {
   customerAvailable: CustomerAvailableAPI.CustomerAvailable = new CustomerAvailableAPI.CustomerAvailable(
@@ -612,23 +617,34 @@ export interface CouponRemoveParams {
   couponCode?: string;
 }
 
-export namespace Coupons {
-  export import CouponCreateResponse = CouponsAPI.CouponCreateResponse;
-  export import CouponRetrieveResponse = CouponsAPI.CouponRetrieveResponse;
-  export import CouponUpdateResponse = CouponsAPI.CouponUpdateResponse;
-  export import CouponListResponse = CouponsAPI.CouponListResponse;
-  export import CouponDeleteResponse = CouponsAPI.CouponDeleteResponse;
-  export import CouponApplyResponse = CouponsAPI.CouponApplyResponse;
-  export import CouponRemoveResponse = CouponsAPI.CouponRemoveResponse;
-  export import CouponCreateParams = CouponsAPI.CouponCreateParams;
-  export import CouponUpdateParams = CouponsAPI.CouponUpdateParams;
-  export import CouponListParams = CouponsAPI.CouponListParams;
-  export import CouponApplyParams = CouponsAPI.CouponApplyParams;
-  export import CouponRemoveParams = CouponsAPI.CouponRemoveParams;
-  export import CustomerAvailable = CustomerAvailableAPI.CustomerAvailable;
-  export import CustomerAvailableListResponse = CustomerAvailableAPI.CustomerAvailableListResponse;
-  export import CustomerAvailableListParams = CustomerAvailableAPI.CustomerAvailableListParams;
-  export import Status = StatusAPI.Status;
-  export import StatusUpdateResponse = StatusAPI.StatusUpdateResponse;
-  export import StatusUpdateParams = StatusAPI.StatusUpdateParams;
+Coupons.CustomerAvailable = CustomerAvailable;
+Coupons.Status = Status;
+
+export declare namespace Coupons {
+  export {
+    type CouponCreateResponse as CouponCreateResponse,
+    type CouponRetrieveResponse as CouponRetrieveResponse,
+    type CouponUpdateResponse as CouponUpdateResponse,
+    type CouponListResponse as CouponListResponse,
+    type CouponDeleteResponse as CouponDeleteResponse,
+    type CouponApplyResponse as CouponApplyResponse,
+    type CouponRemoveResponse as CouponRemoveResponse,
+    type CouponCreateParams as CouponCreateParams,
+    type CouponUpdateParams as CouponUpdateParams,
+    type CouponListParams as CouponListParams,
+    type CouponApplyParams as CouponApplyParams,
+    type CouponRemoveParams as CouponRemoveParams,
+  };
+
+  export {
+    CustomerAvailable as CustomerAvailable,
+    type CustomerAvailableListResponse as CustomerAvailableListResponse,
+    type CustomerAvailableListParams as CustomerAvailableListParams,
+  };
+
+  export {
+    Status as Status,
+    type StatusUpdateResponse as StatusUpdateResponse,
+    type StatusUpdateParams as StatusUpdateParams,
+  };
 }

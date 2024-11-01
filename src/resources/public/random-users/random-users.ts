@@ -3,8 +3,8 @@
 import { APIResource } from '../../../resource';
 import { isRequestOptions } from '../../../core';
 import * as Core from '../../../core';
-import * as RandomUsersAPI from './random-users';
 import * as UserAPI from './user';
+import { User, UserRandomResponse } from './user';
 
 export class RandomUsers extends APIResource {
   user: UserAPI.User = new UserAPI.User(this._client);
@@ -309,10 +309,14 @@ export interface RandomUserListParams {
   page?: string;
 }
 
-export namespace RandomUsers {
-  export import RandomUserRetrieveResponse = RandomUsersAPI.RandomUserRetrieveResponse;
-  export import RandomUserListResponse = RandomUsersAPI.RandomUserListResponse;
-  export import RandomUserListParams = RandomUsersAPI.RandomUserListParams;
-  export import User = UserAPI.User;
-  export import UserRandomResponse = UserAPI.UserRandomResponse;
+RandomUsers.User = User;
+
+export declare namespace RandomUsers {
+  export {
+    type RandomUserRetrieveResponse as RandomUserRetrieveResponse,
+    type RandomUserListResponse as RandomUserListResponse,
+    type RandomUserListParams as RandomUserListParams,
+  };
+
+  export { User as User, type UserRandomResponse as UserRandomResponse };
 }

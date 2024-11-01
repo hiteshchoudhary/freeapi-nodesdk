@@ -1,9 +1,9 @@
 // File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
-export { ProductRandomResponse, Product } from './product';
+export { Product, type ProductRandomResponse } from './product';
 export {
-  RandomProductRetrieveResponse,
-  RandomProductListResponse,
-  RandomProductListParams,
   RandomProducts,
+  type RandomProductRetrieveResponse,
+  type RandomProductListResponse,
+  type RandomProductListParams,
 } from './random-products';

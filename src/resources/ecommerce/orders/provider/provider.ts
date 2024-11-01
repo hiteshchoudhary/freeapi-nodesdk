@@ -2,21 +2,37 @@
 
 import { APIResource } from '../../../../resource';
 import * as PaypalAPI from './paypal';
+import { Paypal, PaypalCreateParams, PaypalCreateResponse, PaypalVerifyPaymentParams } from './paypal';
 import * as RazorpayAPI from './razorpay';
+import {
+  Razorpay,
+  RazorpayCreateParams,
+  RazorpayCreateResponse,
+  RazorpayVerifyPaymentParams,
+  RazorpayVerifyPaymentResponse,
+} from './razorpay';
 
 export class Provider extends APIResource {
   razorpay: RazorpayAPI.Razorpay = new RazorpayAPI.Razorpay(this._client);
   paypal: PaypalAPI.Paypal = new PaypalAPI.Paypal(this._client);
 }
 
-export namespace Provider {
-  export import Razorpay = RazorpayAPI.Razorpay;
-  export import RazorpayCreateResponse = RazorpayAPI.RazorpayCreateResponse;
-  export import RazorpayVerifyPaymentResponse = RazorpayAPI.RazorpayVerifyPaymentResponse;
-  export import RazorpayCreateParams = RazorpayAPI.RazorpayCreateParams;
-  export import RazorpayVerifyPaymentParams = RazorpayAPI.RazorpayVerifyPaymentParams;
-  export import Paypal = PaypalAPI.Paypal;
-  export import PaypalCreateResponse = PaypalAPI.PaypalCreateResponse;
-  export import PaypalCreateParams = PaypalAPI.PaypalCreateParams;
-  export import PaypalVerifyPaymentParams = PaypalAPI.PaypalVerifyPaymentParams;
+Provider.Razorpay = Razorpay;
+Provider.Paypal = Paypal;
+
+export declare namespace Provider {
+  export {
+    Razorpay as Razorpay,
+    type RazorpayCreateResponse as RazorpayCreateResponse,
+    type RazorpayVerifyPaymentResponse as RazorpayVerifyPaymentResponse,
+    type RazorpayCreateParams as RazorpayCreateParams,
+    type RazorpayVerifyPaymentParams as RazorpayVerifyPaymentParams,
+  };
+
+  export {
+    Paypal as Paypal,
+    type PaypalCreateResponse as PaypalCreateResponse,
+    type PaypalCreateParams as PaypalCreateParams,
+    type PaypalVerifyPaymentParams as PaypalVerifyPaymentParams,
+  };
 }

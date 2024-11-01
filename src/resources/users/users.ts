@@ -3,8 +3,8 @@
 import { APIResource } from '../../resource';
 import { isRequestOptions } from '../../core';
 import * as Core from '../../core';
-import * as UsersAPI from './users';
 import * as AvatarAPI from './avatar';
+import { Avatar, AvatarUpdateParams, AvatarUpdateResponse } from './avatar';
 
 export class Users extends APIResource {
   avatar: AvatarAPI.Avatar = new AvatarAPI.Avatar(this._client);
@@ -243,18 +243,25 @@ export interface UserResetPasswordParams {
   newPassword?: string;
 }
 
-export namespace Users {
-  export import UserAssignRoleResponse = UsersAPI.UserAssignRoleResponse;
-  export import UserChangePasswordResponse = UsersAPI.UserChangePasswordResponse;
-  export import UserForgotPasswordResponse = UsersAPI.UserForgotPasswordResponse;
-  export import UserRefreshTokenResponse = UsersAPI.UserRefreshTokenResponse;
-  export import UserResendEmailVerificationResponse = UsersAPI.UserResendEmailVerificationResponse;
-  export import UserResetPasswordResponse = UsersAPI.UserResetPasswordResponse;
-  export import UserAssignRoleParams = UsersAPI.UserAssignRoleParams;
-  export import UserChangePasswordParams = UsersAPI.UserChangePasswordParams;
-  export import UserForgotPasswordParams = UsersAPI.UserForgotPasswordParams;
-  export import UserResetPasswordParams = UsersAPI.UserResetPasswordParams;
-  export import Avatar = AvatarAPI.Avatar;
-  export import AvatarUpdateResponse = AvatarAPI.AvatarUpdateResponse;
-  export import AvatarUpdateParams = AvatarAPI.AvatarUpdateParams;
+Users.Avatar = Avatar;
+
+export declare namespace Users {
+  export {
+    type UserAssignRoleResponse as UserAssignRoleResponse,
+    type UserChangePasswordResponse as UserChangePasswordResponse,
+    type UserForgotPasswordResponse as UserForgotPasswordResponse,
+    type UserRefreshTokenResponse as UserRefreshTokenResponse,
+    type UserResendEmailVerificationResponse as UserResendEmailVerificationResponse,
+    type UserResetPasswordResponse as UserResetPasswordResponse,
+    type UserAssignRoleParams as UserAssignRoleParams,
+    type UserChangePasswordParams as UserChangePasswordParams,
+    type UserForgotPasswordParams as UserForgotPasswordParams,
+    type UserResetPasswordParams as UserResetPasswordParams,
+  };
+
+  export {
+    Avatar as Avatar,
+    type AvatarUpdateResponse as AvatarUpdateResponse,
+    type AvatarUpdateParams as AvatarUpdateParams,
+  };
 }

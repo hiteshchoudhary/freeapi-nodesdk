@@ -2,7 +2,6 @@
 
 import { APIResource } from '../../../resource';
 import * as Core from '../../../core';
-import * as PathVariableAPI from './path-variable';
 
 export class PathVariable extends APIResource {
   /**
@@ -39,6 +38,6 @@ export namespace PathVariableRetrieveResponse {
   }
 }
 
-export namespace PathVariable {
-  export import PathVariableRetrieveResponse = PathVariableAPI.PathVariableRetrieveResponse;
+export declare namespace PathVariable {
+  export { type PathVariableRetrieveResponse as PathVariableRetrieveResponse };
 }

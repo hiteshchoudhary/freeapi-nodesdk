@@ -2,7 +2,6 @@
 
 import { APIResource } from '../../../resource';
 import * as Core from '../../../core';
-import * as IPAPI from './ip';
 
 export class IP extends APIResource {
   /**
@@ -35,6 +34,6 @@ export namespace IPRetrieveResponse {
   }
 }
 
-export namespace IP {
-  export import IPRetrieveResponse = IPAPI.IPRetrieveResponse;
+export declare namespace IP {
+  export { type IPRetrieveResponse as IPRetrieveResponse };
 }

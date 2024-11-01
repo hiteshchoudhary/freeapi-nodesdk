@@ -2,8 +2,8 @@
 
 import { APIResource } from '../../resource';
 import * as Core from '../../core';
-import * as CartAPI from './cart';
 import * as ItemAPI from './item';
+import { Item as ItemAPIItem, ItemCreateParams, ItemCreateResponse, ItemDeleteResponse } from './item';
 
 export class Cart extends APIResource {
   item: ItemAPI.Item = new ItemAPI.Item(this._client);
@@ -135,10 +135,15 @@ export namespace CartRetrieveResponse {
   }
 }
 
-export namespace Cart {
-  export import CartRetrieveResponse = CartAPI.CartRetrieveResponse;
-  export import Item = ItemAPI.Item;
-  export import ItemCreateResponse = ItemAPI.ItemCreateResponse;
-  export import ItemDeleteResponse = ItemAPI.ItemDeleteResponse;
-  export import ItemCreateParams = ItemAPI.ItemCreateParams;
+Cart.Item = ItemAPIItem;
+
+export declare namespace Cart {
+  export { type CartRetrieveResponse as CartRetrieveResponse };
+
+  export {
+    ItemAPIItem as Item,
+    type ItemCreateResponse as ItemCreateResponse,
+    type ItemDeleteResponse as ItemDeleteResponse,
+    type ItemCreateParams as ItemCreateParams,
+  };
 }

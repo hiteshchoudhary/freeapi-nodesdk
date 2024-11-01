@@ -1,16 +1,16 @@
 // File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
-export { AvatarUpdateResponse, AvatarUpdateParams, Avatar } from './avatar';
+export { Avatar, type AvatarUpdateResponse, type AvatarUpdateParams } from './avatar';
 export {
-  UserAssignRoleResponse,
-  UserChangePasswordResponse,
-  UserForgotPasswordResponse,
-  UserRefreshTokenResponse,
-  UserResendEmailVerificationResponse,
-  UserResetPasswordResponse,
-  UserAssignRoleParams,
-  UserChangePasswordParams,
-  UserForgotPasswordParams,
-  UserResetPasswordParams,
   Users,
+  type UserAssignRoleResponse,
+  type UserChangePasswordResponse,
+  type UserForgotPasswordResponse,
+  type UserRefreshTokenResponse,
+  type UserResendEmailVerificationResponse,
+  type UserResetPasswordResponse,
+  type UserAssignRoleParams,
+  type UserChangePasswordParams,
+  type UserForgotPasswordParams,
+  type UserResetPasswordParams,
 } from './users';

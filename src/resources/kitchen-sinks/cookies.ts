@@ -3,7 +3,6 @@
 import { APIResource } from '../../resource';
 import { isRequestOptions } from '../../core';
 import * as Core from '../../core';
-import * as CookiesAPI from './cookies';
 
 export class Cookies extends APIResource {
   /**
@@ -138,10 +137,12 @@ export interface CookieRemoveParams {
   cookieKey?: string;
 }
 
-export namespace Cookies {
-  export import CookieCreateResponse = CookiesAPI.CookieCreateResponse;
-  export import CookieRetrieveResponse = CookiesAPI.CookieRetrieveResponse;
-  export import CookieRemoveResponse = CookiesAPI.CookieRemoveResponse;
-  export import CookieCreateParams = CookiesAPI.CookieCreateParams;
-  export import CookieRemoveParams = CookiesAPI.CookieRemoveParams;
+export declare namespace Cookies {
+  export {
+    type CookieCreateResponse as CookieCreateResponse,
+    type CookieRetrieveResponse as CookieRetrieveResponse,
+    type CookieRemoveResponse as CookieRemoveResponse,
+    type CookieCreateParams as CookieCreateParams,
+    type CookieRemoveParams as CookieRemoveParams,
+  };
 }

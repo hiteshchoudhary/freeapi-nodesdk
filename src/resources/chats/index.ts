@@ -1,15 +1,15 @@
 // File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
-export { ChatRemoveResponse, Chats } from './chats';
+export { Chats, type ChatRemoveResponse } from './chats';
 export {
-  GroupCreateResponse,
-  GroupRetrieveResponse,
-  GroupUpdateResponse,
-  GroupDeleteResponse,
-  GroupLeaveResponse,
-  GroupParticipantAddResponse,
-  GroupParticipantRemoveResponse,
-  GroupCreateParams,
-  GroupUpdateParams,
   Group,
+  type GroupCreateResponse,
+  type GroupRetrieveResponse,
+  type GroupUpdateResponse,
+  type GroupDeleteResponse,
+  type GroupLeaveResponse,
+  type GroupParticipantAddResponse,
+  type GroupParticipantRemoveResponse,
+  type GroupCreateParams,
+  type GroupUpdateParams,
 } from './group';

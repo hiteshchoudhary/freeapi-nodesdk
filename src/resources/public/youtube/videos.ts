@@ -3,7 +3,6 @@
 import { APIResource } from '../../../resource';
 import { isRequestOptions } from '../../../core';
 import * as Core from '../../../core';
-import * as VideosAPI from './videos';
 
 export class Videos extends APIResource {
   /**
@@ -466,8 +465,10 @@ export interface VideoListParams {
   sortBy?: string;
 }
 
-export namespace Videos {
-  export import VideoRetrieveResponse = VideosAPI.VideoRetrieveResponse;
-  export import VideoListResponse = VideosAPI.VideoListResponse;
-  export import VideoListParams = VideosAPI.VideoListParams;
+export declare namespace Videos {
+  export {
+    type VideoRetrieveResponse as VideoRetrieveResponse,
+    type VideoListResponse as VideoListResponse,
+    type VideoListParams as VideoListParams,
+  };
 }

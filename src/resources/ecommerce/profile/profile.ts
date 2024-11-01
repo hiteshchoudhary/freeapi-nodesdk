@@ -3,8 +3,8 @@
 import { APIResource } from '../../../resource';
 import { isRequestOptions } from '../../../core';
 import * as Core from '../../../core';
-import * as ProfileAPI from './profile';
 import * as MyOrdersAPI from './my-orders';
+import { MyOrderListParams, MyOrderListResponse, MyOrders } from './my-orders';
 
 export class Profile extends APIResource {
   myOrders: MyOrdersAPI.MyOrders = new MyOrdersAPI.MyOrders(this._client);
@@ -117,11 +117,18 @@ export interface ProfileUpdateParams {
   phoneNumber?: string;
 }
 
-export namespace Profile {
-  export import ProfileRetrieveResponse = ProfileAPI.ProfileRetrieveResponse;
-  export import ProfileUpdateResponse = ProfileAPI.ProfileUpdateResponse;
-  export import ProfileUpdateParams = ProfileAPI.ProfileUpdateParams;
-  export import MyOrders = MyOrdersAPI.MyOrders;
-  export import MyOrderListResponse = MyOrdersAPI.MyOrderListResponse;
-  export import MyOrderListParams = MyOrdersAPI.MyOrderListParams;
+Profile.MyOrders = MyOrders;
+
+export declare namespace Profile {
+  export {
+    type ProfileRetrieveResponse as ProfileRetrieveResponse,
+    type ProfileUpdateResponse as ProfileUpdateResponse,
+    type ProfileUpdateParams as ProfileUpdateParams,
+  };
+
+  export {
+    MyOrders as MyOrders,
+    type MyOrderListResponse as MyOrderListResponse,
+    type MyOrderListParams as MyOrderListParams,
+  };
 }

@@ -1,5 +1,5 @@
 // File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
 export { Follow } from './follow';
-export { FollowerListResponse, FollowerListParams, Followers } from './followers';
-export { FollowingListResponse, FollowingListParams, Following } from './following';
+export { Followers, type FollowerListResponse, type FollowerListParams } from './followers';
+export { Following, type FollowingListResponse, type FollowingListParams } from './following';

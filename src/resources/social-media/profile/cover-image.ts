@@ -3,7 +3,6 @@
 import { APIResource } from '../../../resource';
 import { isRequestOptions } from '../../../core';
 import * as Core from '../../../core';
-import * as CoverImageAPI from './cover-image';
 
 export class CoverImage extends APIResource {
   /**
@@ -117,7 +116,9 @@ export interface CoverImageUpdateParams {
   coverImage?: Core.Uploadable;
 }
 
-export namespace CoverImage {
-  export import CoverImageUpdateResponse = CoverImageAPI.CoverImageUpdateResponse;
-  export import CoverImageUpdateParams = CoverImageAPI.CoverImageUpdateParams;
+export declare namespace CoverImage {
+  export {
+    type CoverImageUpdateResponse as CoverImageUpdateResponse,
+    type CoverImageUpdateParams as CoverImageUpdateParams,
+  };
 }

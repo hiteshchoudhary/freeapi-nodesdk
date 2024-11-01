@@ -2,7 +2,6 @@
 
 import { APIResource } from '../../resource';
 import * as Core from '../../core';
-import * as MessagesAPI from './messages';
 
 export class Messages extends APIResource {
   /**
@@ -39,6 +38,6 @@ export namespace MessageDeleteResponse {
   }
 }
 
-export namespace Messages {
-  export import MessageDeleteResponse = MessagesAPI.MessageDeleteResponse;
+export declare namespace Messages {
+  export { type MessageDeleteResponse as MessageDeleteResponse };
 }

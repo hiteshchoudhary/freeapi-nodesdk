@@ -3,7 +3,6 @@
 import { APIResource } from '../../../../resource';
 import { isRequestOptions } from '../../../../core';
 import * as Core from '../../../../core';
-import * as PaypalAPI from './paypal';
 
 export class Paypal extends APIResource {
   /**
@@ -97,8 +96,10 @@ export interface PaypalVerifyPaymentParams {
   orderId?: string;
 }
 
-export namespace Paypal {
-  export import PaypalCreateResponse = PaypalAPI.PaypalCreateResponse;
-  export import PaypalCreateParams = PaypalAPI.PaypalCreateParams;
-  export import PaypalVerifyPaymentParams = PaypalAPI.PaypalVerifyPaymentParams;
+export declare namespace Paypal {
+  export {
+    type PaypalCreateResponse as PaypalCreateResponse,
+    type PaypalCreateParams as PaypalCreateParams,
+    type PaypalVerifyPaymentParams as PaypalVerifyPaymentParams,
+  };
 }

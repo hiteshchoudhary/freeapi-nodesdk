@@ -2,7 +2,6 @@
 
 import { APIResource } from '../../../resource';
 import * as Core from '../../../core';
-import * as ChannelAPI from './channel';
 
 export class Channel extends APIResource {
   /**
@@ -152,6 +151,6 @@ export namespace ChannelListResponse {
   }
 }
 
-export namespace Channel {
-  export import ChannelListResponse = ChannelAPI.ChannelListResponse;
+export declare namespace Channel {
+  export { type ChannelListResponse as ChannelListResponse };
 }

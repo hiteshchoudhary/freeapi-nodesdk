@@ -3,7 +3,6 @@
 import { APIResource } from '../../../resource';
 import { isRequestOptions } from '../../../core';
 import * as Core from '../../../core';
-import * as QueryParameterAPI from './query-parameter';
 
 export class QueryParameter extends APIResource {
   /**
@@ -61,7 +60,9 @@ export interface QueryParameterRetrieveParams {
   query3?: string;
 }
 
-export namespace QueryParameter {
-  export import QueryParameterRetrieveResponse = QueryParameterAPI.QueryParameterRetrieveResponse;
-  export import QueryParameterRetrieveParams = QueryParameterAPI.QueryParameterRetrieveParams;
+export declare namespace QueryParameter {
+  export {
+    type QueryParameterRetrieveResponse as QueryParameterRetrieveResponse,
+    type QueryParameterRetrieveParams as QueryParameterRetrieveParams,
+  };
 }

@@ -3,7 +3,6 @@
 import { APIResource } from '../../resource';
 import { isRequestOptions } from '../../core';
 import * as Core from '../../core';
-import * as ItemAPI from './item';
 
 export class Item extends APIResource {
   /**
@@ -188,8 +187,10 @@ export interface ItemCreateParams {
   quantity?: string;
 }
 
-export namespace Item {
-  export import ItemCreateResponse = ItemAPI.ItemCreateResponse;
-  export import ItemDeleteResponse = ItemAPI.ItemDeleteResponse;
-  export import ItemCreateParams = ItemAPI.ItemCreateParams;
+export declare namespace Item {
+  export {
+    type ItemCreateResponse as ItemCreateResponse,
+    type ItemDeleteResponse as ItemDeleteResponse,
+    type ItemCreateParams as ItemCreateParams,
+  };
 }

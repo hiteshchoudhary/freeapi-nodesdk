@@ -3,7 +3,6 @@
 import { APIResource } from '../../../resource';
 import { isRequestOptions } from '../../../core';
 import * as Core from '../../../core';
-import * as MyOrdersAPI from './my-orders';
 
 export class MyOrders extends APIResource {
   /**
@@ -132,7 +131,6 @@ export interface MyOrderListParams {
   page?: string;
 }
 
-export namespace MyOrders {
-  export import MyOrderListResponse = MyOrdersAPI.MyOrderListResponse;
-  export import MyOrderListParams = MyOrdersAPI.MyOrderListParams;
+export declare namespace MyOrders {
+  export { type MyOrderListResponse as MyOrderListResponse, type MyOrderListParams as MyOrderListParams };
 }

@@ -3,7 +3,6 @@
 import { APIResource } from '../../../resource';
 import { isRequestOptions } from '../../../core';
 import * as Core from '../../../core';
-import * as FollowersAPI from './followers';
 
 export class Followers extends APIResource {
   /**
@@ -189,7 +188,6 @@ export interface FollowerListParams {
   page?: string;
 }
 
-export namespace Followers {
-  export import FollowerListResponse = FollowersAPI.FollowerListResponse;
-  export import FollowerListParams = FollowersAPI.FollowerListParams;
+export declare namespace Followers {
+  export { type FollowerListResponse as FollowerListResponse, type FollowerListParams as FollowerListParams };
 }

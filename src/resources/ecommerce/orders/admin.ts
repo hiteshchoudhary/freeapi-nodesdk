@@ -3,7 +3,6 @@
 import { APIResource } from '../../../resource';
 import { isRequestOptions } from '../../../core';
 import * as Core from '../../../core';
-import * as AdminAPI from './admin';
 
 export class Admin extends APIResource {
   /**
@@ -150,7 +149,6 @@ export interface AdminListParams {
   status?: string;
 }
 
-export namespace Admin {
-  export import AdminListResponse = AdminAPI.AdminListResponse;
-  export import AdminListParams = AdminAPI.AdminListParams;
+export declare namespace Admin {
+  export { type AdminListResponse as AdminListResponse, type AdminListParams as AdminListParams };
 }

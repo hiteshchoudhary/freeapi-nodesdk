@@ -2,7 +2,6 @@
 
 import { APIResource } from '../../../resource';
 import * as Core from '../../../core';
-import * as CacheAPI from './cache';
 
 export class Cache extends APIResource {
   /**
@@ -62,6 +61,6 @@ export namespace CacheRetrieveResponse {
   }
 }
 
-export namespace Cache {
-  export import CacheRetrieveResponse = CacheAPI.CacheRetrieveResponse;
+export declare namespace Cache {
+  export { type CacheRetrieveResponse as CacheRetrieveResponse };
 }

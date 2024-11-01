@@ -2,7 +2,6 @@
 
 import { APIResource } from '../../../resource';
 import * as Core from '../../../core';
-import * as DogAPI from './dog';
 
 export class Dog extends APIResource {
   /**
@@ -74,6 +73,6 @@ export namespace DogRandomResponse {
   }
 }
 
-export namespace Dog {
-  export import DogRandomResponse = DogAPI.DogRandomResponse;
+export declare namespace Dog {
+  export { type DogRandomResponse as DogRandomResponse };
 }

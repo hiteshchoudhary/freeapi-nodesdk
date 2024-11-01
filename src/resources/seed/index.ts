@@ -1,8 +1,8 @@
 // File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
-export { ChatAppCreateResponse, ChatApp } from './chat-app';
-export { EcommerceCreateResponse, Ecommerce } from './ecommerce';
-export { GeneratedCredentialListResponse, GeneratedCredentials } from './generated-credentials';
+export { ChatApp, type ChatAppCreateResponse } from './chat-app';
+export { Ecommerce, type EcommerceCreateResponse } from './ecommerce';
+export { GeneratedCredentials, type GeneratedCredentialListResponse } from './generated-credentials';
 export { Seed } from './seed';
-export { SocialMediaCreateResponse, SocialMedia } from './social-media';
-export { TodoCreateResponse, Todos } from './todos';
+export { SocialMedia, type SocialMediaCreateResponse } from './social-media';
+export { Todos, type TodoCreateResponse } from './todos';

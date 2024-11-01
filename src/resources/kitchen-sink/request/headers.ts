@@ -2,7 +2,6 @@
 
 import { APIResource } from '../../../resource';
 import * as Core from '../../../core';
-import * as HeadersAPI from './headers';
 
 export class Headers extends APIResource {
   /**
@@ -53,6 +52,6 @@ export namespace HeaderRetrieveResponse {
   }
 }
 
-export namespace Headers {
-  export import HeaderRetrieveResponse = HeadersAPI.HeaderRetrieveResponse;
+export declare namespace Headers {
+  export { type HeaderRetrieveResponse as HeaderRetrieveResponse };
 }

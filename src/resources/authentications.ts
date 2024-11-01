@@ -3,7 +3,6 @@
 import { APIResource } from '../resource';
 import { isRequestOptions } from '../core';
 import * as Core from '../core';
-import * as AuthenticationsAPI from './authentications';
 
 export class Authentications extends APIResource {
   /**
@@ -343,12 +342,14 @@ export interface AuthenticationRegisterParams {
   username?: string;
 }
 
-export namespace Authentications {
-  export import AuthenticationCurrentUserResponse = AuthenticationsAPI.AuthenticationCurrentUserResponse;
-  export import AuthenticationLoginResponse = AuthenticationsAPI.AuthenticationLoginResponse;
-  export import AuthenticationLogoutResponse = AuthenticationsAPI.AuthenticationLogoutResponse;
-  export import AuthenticationRegisterResponse = AuthenticationsAPI.AuthenticationRegisterResponse;
-  export import AuthenticationVerifyEmailResponse = AuthenticationsAPI.AuthenticationVerifyEmailResponse;
-  export import AuthenticationLoginParams = AuthenticationsAPI.AuthenticationLoginParams;
-  export import AuthenticationRegisterParams = AuthenticationsAPI.AuthenticationRegisterParams;
+export declare namespace Authentications {
+  export {
+    type AuthenticationCurrentUserResponse as AuthenticationCurrentUserResponse,
+    type AuthenticationLoginResponse as AuthenticationLoginResponse,
+    type AuthenticationLogoutResponse as AuthenticationLogoutResponse,
+    type AuthenticationRegisterResponse as AuthenticationRegisterResponse,
+    type AuthenticationVerifyEmailResponse as AuthenticationVerifyEmailResponse,
+    type AuthenticationLoginParams as AuthenticationLoginParams,
+    type AuthenticationRegisterParams as AuthenticationRegisterParams,
+  };
 }

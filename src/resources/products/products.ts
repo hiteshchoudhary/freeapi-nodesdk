@@ -3,9 +3,10 @@
 import { APIResource } from '../../resource';
 import { isRequestOptions } from '../../core';
 import * as Core from '../../core';
-import * as ProductsAPI from './products';
 import * as CategoryAPI from './category';
+import { Category, CategoryRetrieveParams, CategoryRetrieveResponse } from './category';
 import * as SubimageAPI from './subimage';
+import { Subimage, SubimageRemoveResponse } from './subimage';
 
 export class Products extends APIResource {
   category: CategoryAPI.Category = new CategoryAPI.Category(this._client);
@@ -455,18 +456,26 @@ export interface ProductListParams {
   page?: string;
 }
 
-export namespace Products {
-  export import ProductCreateResponse = ProductsAPI.ProductCreateResponse;
-  export import ProductRetrieveResponse = ProductsAPI.ProductRetrieveResponse;
-  export import ProductUpdateResponse = ProductsAPI.ProductUpdateResponse;
-  export import ProductListResponse = ProductsAPI.ProductListResponse;
-  export import ProductDeleteResponse = ProductsAPI.ProductDeleteResponse;
-  export import ProductCreateParams = ProductsAPI.ProductCreateParams;
-  export import ProductUpdateParams = ProductsAPI.ProductUpdateParams;
-  export import ProductListParams = ProductsAPI.ProductListParams;
-  export import Category = CategoryAPI.Category;
-  export import CategoryRetrieveResponse = CategoryAPI.CategoryRetrieveResponse;
-  export import CategoryRetrieveParams = CategoryAPI.CategoryRetrieveParams;
-  export import Subimage = SubimageAPI.Subimage;
-  export import SubimageRemoveResponse = SubimageAPI.SubimageRemoveResponse;
+Products.Category = Category;
+Products.Subimage = Subimage;
+
+export declare namespace Products {
+  export {
+    type ProductCreateResponse as ProductCreateResponse,
+    type ProductRetrieveResponse as ProductRetrieveResponse,
+    type ProductUpdateResponse as ProductUpdateResponse,
+    type ProductListResponse as ProductListResponse,
+    type ProductDeleteResponse as ProductDeleteResponse,
+    type ProductCreateParams as ProductCreateParams,
+    type ProductUpdateParams as ProductUpdateParams,
+    type ProductListParams as ProductListParams,
+  };
+
+  export {
+    Category as Category,
+    type CategoryRetrieveResponse as CategoryRetrieveResponse,
+    type CategoryRetrieveParams as CategoryRetrieveParams,
+  };
+
+  export { Subimage as Subimage, type SubimageRemoveResponse as SubimageRemoveResponse };
 }

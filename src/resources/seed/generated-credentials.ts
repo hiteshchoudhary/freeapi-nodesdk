@@ -2,7 +2,6 @@
 
 import { APIResource } from '../../resource';
 import * as Core from '../../core';
-import * as GeneratedCredentialsAPI from './generated-credentials';
 
 export class GeneratedCredentials extends APIResource {
   /**
@@ -38,6 +37,6 @@ export namespace GeneratedCredentialListResponse {
   }
 }
 
-export namespace GeneratedCredentials {
-  export import GeneratedCredentialListResponse = GeneratedCredentialsAPI.GeneratedCredentialListResponse;
+export declare namespace GeneratedCredentials {
+  export { type GeneratedCredentialListResponse as GeneratedCredentialListResponse };
 }
