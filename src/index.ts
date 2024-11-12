@@ -210,25 +210,6 @@ export class Freeapiapp extends Core.APIClient {
   static fileFromPath = Uploads.fileFromPath;
 }
 
-export {
-  FreeapiappError,
-  APIError,
-  APIConnectionError,
-  APIConnectionTimeoutError,
-  APIUserAbortError,
-  NotFoundError,
-  ConflictError,
-  RateLimitError,
-  BadRequestError,
-  AuthenticationError,
-  InternalServerError,
-  PermissionDeniedError,
-  UnprocessableEntityError,
-} from './error';
-
-export import toFile = Uploads.toFile;
-export import fileFromPath = Uploads.fileFromPath;
-
 Freeapiapp.Public = Public;
 Freeapiapp.KitchenSink = KitchenSink;
 Freeapiapp.KitchenSinks = KitchenSinks;
@@ -245,7 +226,6 @@ Freeapiapp.Messages = Messages;
 Freeapiapp.Seed = Seed;
 Freeapiapp.ResetDB = ResetDB;
 Freeapiapp.Healthcheck = Healthcheck;
-
 export declare namespace Freeapiapp {
   export type RequestOptions = Core.RequestOptions;
 
@@ -333,5 +313,22 @@ export declare namespace Freeapiapp {
 
   export { Healthcheck as Healthcheck, type HealthcheckRetrieveResponse as HealthcheckRetrieveResponse };
 }
+
+export { toFile, fileFromPath } from 'freeapiapp/uploads';
+export {
+  FreeapiappError,
+  APIError,
+  APIConnectionError,
+  APIConnectionTimeoutError,
+  APIUserAbortError,
+  NotFoundError,
+  ConflictError,
+  RateLimitError,
+  BadRequestError,
+  AuthenticationError,
+  InternalServerError,
+  PermissionDeniedError,
+  UnprocessableEntityError,
+} from 'freeapiapp/error';
 
 export default Freeapiapp;
