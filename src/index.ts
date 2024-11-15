@@ -314,7 +314,7 @@ export declare namespace Freeapiapp {
   export { Healthcheck as Healthcheck, type HealthcheckRetrieveResponse as HealthcheckRetrieveResponse };
 }
 
-export { toFile, fileFromPath } from 'freeapiapp/uploads';
+export { toFile, fileFromPath } from './uploads';
 export {
   FreeapiappError,
   APIError,
@@ -329,6 +329,6 @@ export {
   InternalServerError,
   PermissionDeniedError,
   UnprocessableEntityError,
-} from 'freeapiapp/error';
+} from './error';
 
 export default Freeapiapp;
