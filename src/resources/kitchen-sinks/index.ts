@@ -1,16 +1,16 @@
 // File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
 export {
-  CookieCreateResponse,
-  CookieRetrieveResponse,
-  CookieRemoveResponse,
-  CookieCreateParams,
-  CookieRemoveParams,
   Cookies,
+  type CookieCreateResponse,
+  type CookieRetrieveResponse,
+  type CookieRemoveResponse,
+  type CookieCreateParams,
+  type CookieRemoveParams,
 } from './cookies';
 export {
-  KitchenSinkResponseBrotliResponse,
-  KitchenSinkResponseGzipResponse,
-  KitchenSinkRedirectToParams,
   KitchenSinks,
+  type KitchenSinkResponseBrotliResponse,
+  type KitchenSinkResponseGzipResponse,
+  type KitchenSinkRedirectToParams,
 } from './kitchen-sinks';

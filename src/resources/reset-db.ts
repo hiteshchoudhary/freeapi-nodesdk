@@ -2,7 +2,6 @@
 
 import { APIResource } from '../resource';
 import * as Core from '../core';
-import * as ResetDBAPI from './reset-db';
 
 export class ResetDB extends APIResource {
   /**
@@ -30,6 +29,6 @@ export interface ResetDBDeleteResponse {
   success?: boolean;
 }
 
-export namespace ResetDB {
-  export import ResetDBDeleteResponse = ResetDBAPI.ResetDBDeleteResponse;
+export declare namespace ResetDB {
+  export { type ResetDBDeleteResponse as ResetDBDeleteResponse };
 }

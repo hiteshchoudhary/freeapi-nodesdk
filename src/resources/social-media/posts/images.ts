@@ -2,7 +2,6 @@
 
 import { APIResource } from '../../../resource';
 import * as Core from '../../../core';
-import * as ImagesAPI from './images';
 
 export class Images extends APIResource {
   /**
@@ -134,6 +133,6 @@ export namespace ImageRemoveResponse {
   }
 }
 
-export namespace Images {
-  export import ImageRemoveResponse = ImagesAPI.ImageRemoveResponse;
+export declare namespace Images {
+  export { type ImageRemoveResponse as ImageRemoveResponse };
 }

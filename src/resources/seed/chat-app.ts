@@ -2,7 +2,6 @@
 
 import { APIResource } from '../../resource';
 import * as Core from '../../core';
-import * as ChatAppAPI from './chat-app';
 
 export class ChatApp extends APIResource {
   /**
@@ -26,6 +25,6 @@ export interface ChatAppCreateResponse {
   success?: boolean;
 }
 
-export namespace ChatApp {
-  export import ChatAppCreateResponse = ChatAppAPI.ChatAppCreateResponse;
+export declare namespace ChatApp {
+  export { type ChatAppCreateResponse as ChatAppCreateResponse };
 }

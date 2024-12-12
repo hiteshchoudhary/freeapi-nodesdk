@@ -3,7 +3,6 @@
 import { APIResource } from '../../resource';
 import { isRequestOptions } from '../../core';
 import * as Core from '../../core';
-import * as AddressesAPI from './addresses';
 
 export class Addresses extends APIResource {
   /**
@@ -354,13 +353,15 @@ export interface AddressListParams {
   page?: string;
 }
 
-export namespace Addresses {
-  export import AddressCreateResponse = AddressesAPI.AddressCreateResponse;
-  export import AddressRetrieveResponse = AddressesAPI.AddressRetrieveResponse;
-  export import AddressUpdateResponse = AddressesAPI.AddressUpdateResponse;
-  export import AddressListResponse = AddressesAPI.AddressListResponse;
-  export import AddressDeleteResponse = AddressesAPI.AddressDeleteResponse;
-  export import AddressCreateParams = AddressesAPI.AddressCreateParams;
-  export import AddressUpdateParams = AddressesAPI.AddressUpdateParams;
-  export import AddressListParams = AddressesAPI.AddressListParams;
+export declare namespace Addresses {
+  export {
+    type AddressCreateResponse as AddressCreateResponse,
+    type AddressRetrieveResponse as AddressRetrieveResponse,
+    type AddressUpdateResponse as AddressUpdateResponse,
+    type AddressListResponse as AddressListResponse,
+    type AddressDeleteResponse as AddressDeleteResponse,
+    type AddressCreateParams as AddressCreateParams,
+    type AddressUpdateParams as AddressUpdateParams,
+    type AddressListParams as AddressListParams,
+  };
 }

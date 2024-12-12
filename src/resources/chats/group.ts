@@ -3,7 +3,6 @@
 import { APIResource } from '../../resource';
 import { isRequestOptions } from '../../core';
 import * as Core from '../../core';
-import * as GroupAPI from './group';
 
 export class Group extends APIResource {
   /**
@@ -580,14 +579,16 @@ export interface GroupUpdateParams {
   name?: string;
 }
 
-export namespace Group {
-  export import GroupCreateResponse = GroupAPI.GroupCreateResponse;
-  export import GroupRetrieveResponse = GroupAPI.GroupRetrieveResponse;
-  export import GroupUpdateResponse = GroupAPI.GroupUpdateResponse;
-  export import GroupDeleteResponse = GroupAPI.GroupDeleteResponse;
-  export import GroupLeaveResponse = GroupAPI.GroupLeaveResponse;
-  export import GroupParticipantAddResponse = GroupAPI.GroupParticipantAddResponse;
-  export import GroupParticipantRemoveResponse = GroupAPI.GroupParticipantRemoveResponse;
-  export import GroupCreateParams = GroupAPI.GroupCreateParams;
-  export import GroupUpdateParams = GroupAPI.GroupUpdateParams;
+export declare namespace Group {
+  export {
+    type GroupCreateResponse as GroupCreateResponse,
+    type GroupRetrieveResponse as GroupRetrieveResponse,
+    type GroupUpdateResponse as GroupUpdateResponse,
+    type GroupDeleteResponse as GroupDeleteResponse,
+    type GroupLeaveResponse as GroupLeaveResponse,
+    type GroupParticipantAddResponse as GroupParticipantAddResponse,
+    type GroupParticipantRemoveResponse as GroupParticipantRemoveResponse,
+    type GroupCreateParams as GroupCreateParams,
+    type GroupUpdateParams as GroupUpdateParams,
+  };
 }

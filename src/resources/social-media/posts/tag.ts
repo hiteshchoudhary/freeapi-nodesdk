@@ -3,7 +3,6 @@
 import { APIResource } from '../../../resource';
 import { isRequestOptions } from '../../../core';
 import * as Core from '../../../core';
-import * as TagAPI from './tag';
 
 export class Tag extends APIResource {
   /**
@@ -166,7 +165,6 @@ export interface TagListParams {
   page?: string;
 }
 
-export namespace Tag {
-  export import TagListResponse = TagAPI.TagListResponse;
-  export import TagListParams = TagAPI.TagListParams;
+export declare namespace Tag {
+  export { type TagListResponse as TagListResponse, type TagListParams as TagListParams };
 }

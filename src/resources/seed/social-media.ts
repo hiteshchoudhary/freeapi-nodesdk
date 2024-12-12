@@ -2,7 +2,6 @@
 
 import { APIResource } from '../../resource';
 import * as Core from '../../core';
-import * as SocialMediaAPI from './social-media';
 
 export class SocialMedia extends APIResource {
   /**
@@ -27,6 +26,6 @@ export interface SocialMediaCreateResponse {
   success?: boolean;
 }
 
-export namespace SocialMedia {
-  export import SocialMediaCreateResponse = SocialMediaAPI.SocialMediaCreateResponse;
+export declare namespace SocialMedia {
+  export { type SocialMediaCreateResponse as SocialMediaCreateResponse };
 }

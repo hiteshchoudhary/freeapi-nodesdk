@@ -3,7 +3,6 @@
 import { APIResource } from '../../resource';
 import { isRequestOptions } from '../../core';
 import * as Core from '../../core';
-import * as BooksAPI from './books';
 
 export class Books extends APIResource {
   /**
@@ -462,9 +461,11 @@ export interface BookListParams {
   query?: string;
 }
 
-export namespace Books {
-  export import BookRetrieveResponse = BooksAPI.BookRetrieveResponse;
-  export import BookListResponse = BooksAPI.BookListResponse;
-  export import BookRandomResponse = BooksAPI.BookRandomResponse;
-  export import BookListParams = BooksAPI.BookListParams;
+export declare namespace Books {
+  export {
+    type BookRetrieveResponse as BookRetrieveResponse,
+    type BookListResponse as BookListResponse,
+    type BookRandomResponse as BookRandomResponse,
+    type BookListParams as BookListParams,
+  };
 }

@@ -2,7 +2,6 @@
 
 import { APIResource } from '../../resource';
 import * as Core from '../../core';
-import * as HTTPMethodsAPI from './http-methods';
 
 export class HTTPMethods extends APIResource {
   /**
@@ -330,10 +329,12 @@ export namespace HTTPMethodPutResponse {
   }
 }
 
-export namespace HTTPMethods {
-  export import HTTPMethodCreateResponse = HTTPMethodsAPI.HTTPMethodCreateResponse;
-  export import HTTPMethodUpdateResponse = HTTPMethodsAPI.HTTPMethodUpdateResponse;
-  export import HTTPMethodDeleteResponse = HTTPMethodsAPI.HTTPMethodDeleteResponse;
-  export import HTTPMethodGetResponse = HTTPMethodsAPI.HTTPMethodGetResponse;
-  export import HTTPMethodPutResponse = HTTPMethodsAPI.HTTPMethodPutResponse;
+export declare namespace HTTPMethods {
+  export {
+    type HTTPMethodCreateResponse as HTTPMethodCreateResponse,
+    type HTTPMethodUpdateResponse as HTTPMethodUpdateResponse,
+    type HTTPMethodDeleteResponse as HTTPMethodDeleteResponse,
+    type HTTPMethodGetResponse as HTTPMethodGetResponse,
+    type HTTPMethodPutResponse as HTTPMethodPutResponse,
+  };
 }

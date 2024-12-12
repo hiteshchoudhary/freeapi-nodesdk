@@ -1,4 +1,9 @@
 // File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
-export { CoverImageUpdateResponse, CoverImageUpdateParams, CoverImage } from './cover-image';
-export { ProfileRetrieveResponse, ProfileUpdateResponse, ProfileUpdateParams, Profile } from './profile';
+export { CoverImage, type CoverImageUpdateResponse, type CoverImageUpdateParams } from './cover-image';
+export {
+  Profile,
+  type ProfileRetrieveResponse,
+  type ProfileUpdateResponse,
+  type ProfileUpdateParams,
+} from './profile';

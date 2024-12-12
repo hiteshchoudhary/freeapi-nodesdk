@@ -3,7 +3,6 @@
 import { APIResource } from '../../resource';
 import { isRequestOptions } from '../../core';
 import * as Core from '../../core';
-import * as CategoriesAPI from './categories';
 
 export class Categories extends APIResource {
   /**
@@ -275,13 +274,15 @@ export interface CategoryListParams {
   page?: string;
 }
 
-export namespace Categories {
-  export import CategoryCreateResponse = CategoriesAPI.CategoryCreateResponse;
-  export import CategoryRetrieveResponse = CategoriesAPI.CategoryRetrieveResponse;
-  export import CategoryUpdateResponse = CategoriesAPI.CategoryUpdateResponse;
-  export import CategoryListResponse = CategoriesAPI.CategoryListResponse;
-  export import CategoryDeleteResponse = CategoriesAPI.CategoryDeleteResponse;
-  export import CategoryCreateParams = CategoriesAPI.CategoryCreateParams;
-  export import CategoryUpdateParams = CategoriesAPI.CategoryUpdateParams;
-  export import CategoryListParams = CategoriesAPI.CategoryListParams;
+export declare namespace Categories {
+  export {
+    type CategoryCreateResponse as CategoryCreateResponse,
+    type CategoryRetrieveResponse as CategoryRetrieveResponse,
+    type CategoryUpdateResponse as CategoryUpdateResponse,
+    type CategoryListResponse as CategoryListResponse,
+    type CategoryDeleteResponse as CategoryDeleteResponse,
+    type CategoryCreateParams as CategoryCreateParams,
+    type CategoryUpdateParams as CategoryUpdateParams,
+    type CategoryListParams as CategoryListParams,
+  };
 }
