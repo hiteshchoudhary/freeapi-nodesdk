@@ -482,7 +482,7 @@ export namespace PostListResponse {
 
     posts?: Array<Data.Post>;
 
-    prevPage?: unknown | null;
+    prevPage?: unknown;
 
     serialNumberStartFrom?: number;
 

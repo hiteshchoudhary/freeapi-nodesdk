@@ -305,7 +305,7 @@ export namespace CouponListResponse {
 
     page?: number;
 
-    prevPage?: unknown | null;
+    prevPage?: unknown;
 
     serialNumberStartFrom?: number;
 
@@ -524,7 +524,7 @@ export namespace CouponRemoveResponse {
     export interface Item {
       _id?: string;
 
-      coupon?: unknown | null;
+      coupon?: unknown;
 
       product?: Item.Product;
 

@@ -55,7 +55,7 @@ export namespace UserPostListResponse {
 
     posts?: Array<Data.Post>;
 
-    prevPage?: unknown | null;
+    prevPage?: unknown;
 
     serialNumberStartFrom?: number;
 

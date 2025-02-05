@@ -53,7 +53,7 @@ export namespace MealRetrieveResponse {
   export interface Data {
     id?: number;
 
-    dateModified?: unknown | null;
+    dateModified?: unknown;
 
     idMeal?: string;
 
@@ -61,11 +61,11 @@ export namespace MealRetrieveResponse {
 
     strCategory?: string;
 
-    strCreativeCommonsConfirmed?: unknown | null;
+    strCreativeCommonsConfirmed?: unknown;
 
-    strDrinkAlternate?: unknown | null;
+    strDrinkAlternate?: unknown;
 
-    strImageSource?: unknown | null;
+    strImageSource?: unknown;
 
     strIngredient1?: string;
 
@@ -194,7 +194,7 @@ export namespace MealListResponse {
     export interface Data {
       id?: number;
 
-      dateModified?: unknown | null;
+      dateModified?: unknown;
 
       idMeal?: string;
 
@@ -202,11 +202,11 @@ export namespace MealListResponse {
 
       strCategory?: string;
 
-      strCreativeCommonsConfirmed?: unknown | null;
+      strCreativeCommonsConfirmed?: unknown;
 
-      strDrinkAlternate?: unknown | null;
+      strDrinkAlternate?: unknown;
 
-      strImageSource?: unknown | null;
+      strImageSource?: unknown;
 
       strIngredient1?: string;
 

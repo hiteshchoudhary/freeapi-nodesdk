@@ -74,11 +74,11 @@ export namespace BookmarkRetrieveResponse {
 
     limit?: number;
 
-    nextPage?: unknown | null;
+    nextPage?: unknown;
 
     page?: number;
 
-    prevPage?: unknown | null;
+    prevPage?: unknown;
 
     serialNumberStartFrom?: number;
 
