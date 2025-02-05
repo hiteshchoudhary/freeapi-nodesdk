@@ -54,7 +54,7 @@ export namespace FollowerListResponse {
 
     page?: number;
 
-    prevPage?: unknown | null;
+    prevPage?: unknown;
 
     serialNumberStartFrom?: number;
 

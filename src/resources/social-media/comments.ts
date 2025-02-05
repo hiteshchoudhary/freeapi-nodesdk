@@ -185,7 +185,7 @@ export namespace CommentListResponse {
 
     page?: number;
 
-    prevPage?: unknown | null;
+    prevPage?: unknown;
 
     serialNumberStartFrom?: number;
 

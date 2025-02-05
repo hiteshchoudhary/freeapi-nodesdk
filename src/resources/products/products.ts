@@ -302,7 +302,7 @@ export namespace ProductListResponse {
 
     page?: number;
 
-    prevPage?: unknown | null;
+    prevPage?: unknown;
 
     products?: Array<Data.Product>;
 

@@ -51,7 +51,7 @@ export namespace TagListResponse {
 
     posts?: Array<Data.Post>;
 
-    prevPage?: unknown | null;
+    prevPage?: unknown;
 
     serialNumberStartFrom?: number;
 

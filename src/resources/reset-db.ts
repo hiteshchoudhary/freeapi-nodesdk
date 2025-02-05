@@ -20,7 +20,7 @@ export class ResetDB extends APIResource {
 }
 
 export interface ResetDBDeleteResponse {
-  data?: unknown | null;
+  data?: unknown;
 
   message?: string;
 

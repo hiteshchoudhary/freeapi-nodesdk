@@ -87,7 +87,7 @@ export namespace RazorpayCreateResponse {
 
     notes?: Array<unknown>;
 
-    offer_id?: unknown | null;
+    offer_id?: unknown;
 
     receipt?: string;
 
