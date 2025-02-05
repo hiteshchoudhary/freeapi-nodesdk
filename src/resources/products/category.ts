@@ -54,11 +54,11 @@ export namespace CategoryRetrieveResponse {
 
     limit?: number;
 
-    nextPage?: unknown | null;
+    nextPage?: unknown;
 
     page?: number;
 
-    prevPage?: unknown | null;
+    prevPage?: unknown;
 
     products?: Array<Data.Product>;
 

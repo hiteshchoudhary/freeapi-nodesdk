@@ -43,13 +43,13 @@ export namespace MyOrderListResponse {
 
     limit?: number;
 
-    nextPage?: unknown | null;
+    nextPage?: unknown;
 
     orders?: Array<Data.Order>;
 
     page?: number;
 
-    prevPage?: unknown | null;
+    prevPage?: unknown;
 
     serialNumberStartFrom?: number;
 
@@ -66,7 +66,7 @@ export namespace MyOrderListResponse {
 
       address?: Order.Address;
 
-      coupon?: unknown | null;
+      coupon?: unknown;
 
       createdAt?: string;
 

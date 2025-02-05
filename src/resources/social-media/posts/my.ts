@@ -43,13 +43,13 @@ export namespace MyListResponse {
 
     limit?: number;
 
-    nextPage?: unknown | null;
+    nextPage?: unknown;
 
     page?: number;
 
     posts?: Array<Data.Post>;
 
-    prevPage?: unknown | null;
+    prevPage?: unknown;
 
     serialNumberStartFrom?: number;
 

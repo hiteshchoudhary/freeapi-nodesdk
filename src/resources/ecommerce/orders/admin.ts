@@ -56,7 +56,7 @@ export namespace AdminListResponse {
 
     limit?: number;
 
-    nextPage?: unknown | null;
+    nextPage?: unknown;
 
     orders?: Array<Data.Order>;
 

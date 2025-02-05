@@ -82,7 +82,7 @@ export namespace ItemCreateResponse {
     export interface Item {
       _id?: string;
 
-      coupon?: unknown | null;
+      coupon?: unknown;
 
       product?: Item.Product;
 
