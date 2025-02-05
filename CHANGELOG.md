@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.1.0-alpha.2 (2025-02-05)
+
+Full Changelog: [v0.1.0-alpha.1...v0.1.0-alpha.2](https://github.com/hiteshchoudhary/freeapi-nodesdk/compare/v0.1.0-alpha.1...v0.1.0-alpha.2)
+
+### Chores
+
+* **internal:** codegen related update ([#14](https://github.com/hiteshchoudhary/freeapi-nodesdk/issues/14)) ([87fdf99](https://github.com/hiteshchoudhary/freeapi-nodesdk/commit/87fdf995b86f76f3dd8084b8c84bf99d9951c75c))
+
 ## 0.1.0-alpha.1 (2024-11-28)
 
 Full Changelog: [v0.0.1-alpha.1...v0.1.0-alpha.1](https://github.com/hiteshchoudhary/freeapi-nodesdk/compare/v0.0.1-alpha.1...v0.1.0-alpha.1)
