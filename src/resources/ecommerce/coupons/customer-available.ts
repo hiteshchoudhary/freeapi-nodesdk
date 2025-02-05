@@ -55,7 +55,7 @@ export namespace CustomerAvailableListResponse {
 
     page?: number;
 
-    prevPage?: unknown | null;
+    prevPage?: unknown;
 
     serialNumberStartFrom?: number;
 

@@ -69,7 +69,7 @@ export namespace MessageListResponse {
 
     createdAt?: string;
 
-    file?: unknown | null;
+    file?: unknown;
 
     files?: Array<Data.File>;
 

@@ -29,7 +29,7 @@ export namespace MealRandomResponse {
   export interface Data {
     id?: number;
 
-    dateModified?: unknown | null;
+    dateModified?: unknown;
 
     idMeal?: string;
 
@@ -37,11 +37,11 @@ export namespace MealRandomResponse {
 
     strCategory?: string;
 
-    strCreativeCommonsConfirmed?: unknown | null;
+    strCreativeCommonsConfirmed?: unknown;
 
-    strDrinkAlternate?: unknown | null;
+    strDrinkAlternate?: unknown;
 
-    strImageSource?: unknown | null;
+    strImageSource?: unknown;
 
     strIngredient1?: string;
 
@@ -131,7 +131,7 @@ export namespace MealRandomResponse {
 
     strSource?: string;
 
-    strTags?: unknown | null;
+    strTags?: unknown;
 
     strYoutube?: string;
   }
